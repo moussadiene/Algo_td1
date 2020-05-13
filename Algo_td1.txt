@@ -1,0 +1,968 @@
+exo1 : 
+
+Algo : division 
+
+Var nb1, nb2, rest,qentier : entier ;
+	qreel : réel ;
+DEBUT : 
+ 	
+	REPETER
+		Afficher("Saisir le premier nombre entier :") ;
+ 		Lire(nb1) ;
+	JUSQU’A (nb1>0) ;
+
+	REPETER
+		Afficher("Saisir les 2ieme nombre entier :") ;
+ 		Lire( nb2) ;
+	JUSQU’A (nb2>0) ;
+	
+	qenier ⇐ nb1 div nb2 ;
+	Afficher("le quotient  entier est  :",q)entier ;
+
+	qreel ⇐ nb1/ nb2 ;
+	Afficher("le quotient  entier est  :",qreel) ;
+
+	rest ⇐ nb1 mod nb2 ;	
+	Afficher("le reste de la division entier est :",rest) ;
+
+FIN
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+exo2 : 
+Ecrire un programme qui demande à l’utilisateur de donner le rayon d’un cercle et lui retourne sa surface et son périmètre. 
+PI =  4 * arc tangeante de 1. la fonction arc tangeante est atan ex : atan(2).
+
+Algo : cercle 
+
+Var r , surf , peri , pi : réel ;
+
+DEBUT : 
+ 	
+	REPETER
+		Afficher("Saisir le rayon du cercle svp  :") ;
+ 		Lire(r) ;
+	JUSQU’A (r>0) ;
+
+	pi ⇐  4 * atan(1) ;
+	
+	surf ⇐ r * r * pi ;
+	
+	peri ⇐ 2 * pi * r ;
+	
+	Afficher("la surface est  :" , surf) ;
+	Afficher("le perimetre est  :" , peri) ;
+FIN
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+exo 3
+Version 1 :
+Faire un programme qui saisit 3 résistances : R1, R2 et R3.
+Calculer et afficher la résistance en série : R1 + R2 +R3
+Calculer et afficher la résistance en parallèle : (R1 * R2 * R3) / (R1*R2 + R2*R3 + R1*R3)
+
+Algo : resistance_version1
+
+Var r1, r2, r3 , r_serie , r_para , f_serie , f_para : reel ;
+	choix : entier ;
+DEBUT : 
+ 	
+	REPETER
+		Afficher("Saisir le resistance R1 :") ;
+ 		Lire(r1) ;
+	JUSQU’A (r1>0) ;
+
+	REPETER
+		Afficher("Saisir le resistance R2 :") ;
+ 		Lire(r2) ;
+	JUSQU’A (r2>0) ;
+
+	REPETER
+		Afficher("Saisir le resistance R3 :") ;
+ 		Lire(r3) ;
+	JUSQU’A (r3>0) ;
+	
+	r_serie ⇐ r1 + r2 + r3 ;
+
+	r_para = (r1 * r2 * r3) / (r1*r2 + r2*r3 + r1*r3)
+
+	Afficher("la resistance en serie  est  :" , r_serie) ;
+	Afficher("le registance en paralelle est  :" , r_para) ;
+
+	// version2
+
+	REPETER 
+ 		Afficher("1 - frequence en serie    :" ) ;
+		Afficher("2 - frequence en paralelle ") ;
+		Afficher(" Faite votre choix !!! ") ;
+	JUSQU’A (choix>0 ET choix <3) ;
+	
+	SUIVANT (choix ) FAIRE
+		OPTION 1 :  
+			f_serie ⇐ (r1 + r2 + r3) / r_serie ;
+			Afficher("la resistance en serie  est  :" , f_serie) ;
+		OPTION 2 :
+			r_para = (r1 + r2 + r3) / r_para ;
+			Afficher("le registance en paralelle est  :" , r_para) ;
+		DEFAULT:
+			Afficher("erreurs de choix !!! :") ;
+	FINSUIVANT
+FIN
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Algo : resistance_version2
+
+Var r1, r2, r3 , r_serie, r_para : réel ;
+	choix : entier ;
+DEBUT : 
+	REPETER 
+ 		Afficher("1 - frequence en serie    :" ) ;
+		Afficher("2 - frequence en paralelle ") ;
+		Afficher(" Faite votre choix !!! ") ;
+	JUSQU’A (choix>0 ET choix <3) ;
+	
+	REPETER
+		Afficher("Saisir le resistance R1 :") ;
+ 		Lire(r1) ;
+	JUSQU’A (r1>0) ;
+
+	REPETER
+		Afficher("Saisir le resistance R2 :") ;
+ 		Lire(r2) ;
+	JUSQU’A (r2>0) ;
+
+	REPETER
+		Afficher("Saisir le resistance R3 :") ;
+ 		Lire(r3) ;
+	JUSQU’A (r3>0) ;
+	suivant (choix ) faire
+		option 1 :  
+			r_serie ⇐ r1 + r2 + r3 ;
+			Afficher("la resistance en serie  est  :" , r_serie) ;
+		option 2 :
+			r_para = (r1 * r2 * r3) / (r1*r2 + r2*r3 + r1*r3)
+			Afficher("le registance en paralelle est  :" , r_para) ;
+		default :
+			Afficher("erreurs de choix :") ;
+	finsuivant
+FIN
+
+
+
+
+
+
+exo 4 : 
+Ecrire un programme qui saisit un réel x et un entier n et affiche x à la puissance n.
+Version 1 : utiliser la fonction pow  du fichier d’en-tête <math.h>  ex : pow(x,n)
+Version 2 : en utilisant un boucle
+
+Algo : puissance 
+
+Var x, p1, p2 : réel ;
+      n , i : entier ;
+
+DEBUT : 
+ 	
+	REPETER
+		Afficher("Saisir un nombre reel svp  :") ;
+ 		Lire(x) ;
+	JUSQU’A (x>0) ;
+	
+	REPETER
+		Afficher("Saisir l’exposant de ce nombre en entier svp  :") ;
+ 		Lire(n) ;
+	JUSQU’A (n>0) ;
+
+	// version1
+	p1 ⇐  pow(x,n);
+	
+	// version2
+	p2 = x ;
+	POUR i allant de 1 à n-1 FAIRE
+		p2 ⇐ p2 * x ;
+	FINPOUR
+	
+	Afficher("la puissance avec math.h est  :" , p1) ;
+	Afficher("le puissance avec boucle est  :" , p2) ;
+FIN
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+exo 5 :
+Ecrire un programme qui saisit 5 variables de type entier au clavier et qui affiche leur somme. Utiliser une boucle (for ou while ou do..while).
+
+
+
+Algo : somme_boucle 
+
+Var nbr , som : entier ;
+
+DEBUT : 
+ 	
+	som ⇐ 0 ;
+	
+	POUR i allant de 1 à 5 FAIRE
+		Afficher("Saisir un nombre entier   :") ;
+ 		Lire(nbr) ;
+		som ⇐ som + nbr ; 
+	FINPOUR
+	
+	Afficher("la somme des 5 nombres saisie est  :" , som) ;
+	
+FIN
+
+
+
+
+
+
+
+
+
+Exercice 6 :
+Faire un programme qui saisit  les coordonnées de 2 points A (x1, y1) et b(x2, y2) et qui affiche la distance entre les 2 points.
+Formule : distante = racine carrée de ((x1 – x2)2  + (y1 – y2)2)
+ Racine carrée : sqrt. Ex : sqrt(7) ; <math.h>
+
+Algo : distance
+
+Var x1, y1 , x2, y2 , dist : réel ;
+	
+DEBUT : 
+	
+	Afficher("Saisir les deux coordonnées du point A:") ;
+ 	Lire(x1,y1) ;
+
+	Afficher("Saisir les deux coordonnées du point B:") ;
+ 	Lire(x2,y2) ;	
+
+	dist = sqrt(pow(x1-x2,2) + pow(x2-y2,2)) ;
+
+FIN
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Exercice 7 :  Décomposition d’un montant en euros Écrire un algorithme permettant de décomposer un montant entré au clavier en billets de 20, 10, 5 euros et pièces de 2, 1 euros, de façon à minimiser le nombre de billets et de pièces.
+Algo : decomposition
+VAR montant, nb20,nb10,nb5,nb2,nb1 : entier ;
+DEBUT : 
+	REPETER 
+		AFFICHER ("saisir un montant en euro") ;
+		LIRE (montant) ;	218	
+	JUSQU’A ( montant>0) ;
+	 nb20 ←  0 ;
+	 nb10 ←  0 ;
+	 nb5 ←  0 ;
+	 nb2 ←  0 ;
+	nb1 ←  0 ; 
+	TANQUE ( montant != 0 ) FAIRE
+		SI(montant ≥ 20 )Alors
+			nb20  ←  nb20 + 1 ; 
+			montant ←  montant – 20 ; // 18
+			SINON SI (montant ≥ 10 )Alors
+				nb10  ←  nb10 + 1 ; 
+				montant ←  montant – 10 ; // 8
+				SINON SI (montant ≥ 5 )Alors
+					nb5  ←  nb5 + 1 ; 
+					montant ←  montant – 5 ; // 3
+					SINON SI (montant ≥ 2 )Alors
+						nb2  ←  nb2 + 1 ;
+						montant ←  montant – 2 ; //1
+						SINON SI (montant ≥ 1 )Alors
+							nb1  ←  nb1 + 1 ;
+							montant ←  montant – 2 ;
+						FINSI
+					FINSI
+				FINSI
+			FINSI
+		FINSI
+	FINTANQUE
+	ECRIRE("Apres décomposition de :  ",montant,"euro on a ")
+	ECRIRE(nb2, "de billets de 20 ") ;
+	ECRIRE(nb2, "de billets de 10 ") ;
+	ECRIRE(nb2, "de billets de 5 ") ;
+	ECRIRE(nb2, "de piece de 2 ") ;
+	ECRIRE(nb2, "de piece de 1 ") ;
+FIN
+	
+
+
+
+Exercice 8 : 
+Ecrire un algorithme permettant de résoudre une équation du second degré. 
+Ax2 + bx + c = 0
+
+
+Algo : equation 
+
+Var a , b , c , x1 , x2, delta : reel;
+
+DEBUT : 
+ 	
+	ECRIRE ("saisir A de x2") ;
+	LIRE (a) ;		
+	ECRIRE ("saisir B de x") ;
+	LIRE (b) ;	
+	ECRIRE ("saisir C ") ;
+	LIRE (c) ;	
+	delta ← pow(b,2) – 4 * a * c ;
+	SI (delta > 0 ) ALORS
+		x1 = (- b – sqrt(delta)) / 2*a ;
+		x2 = (- b + sqrt(delta)) / 2*a ;
+		ECRIRE(" l ‘ equation admet 2 solutions  : x1 = " ,  x1 ," x2 = ", x2  ) ;
+		SINON SI (delta == 0 )Alors
+			x1 = - b / 2*a ;
+			ECRIRE(" l ‘ equation admet 1 solution  : x0 = " ,  x1 ) ;
+			SINON
+				ECRIRE(" delta est inferieur a 0, la solution l’ensemble vide ") ;
+		FINSI
+	FINSI
+	
+	
+FIN
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Exercice 9 : 
+Ecrire un algorithme qui donne la durée de vol en heure minute connaissant l'heure de départ et l'heure d'arrivée. 
+a. On considère que le départ et l'arrivé ont lieu le même jour 
+b. On suppose que la durée de vol est inférieure à 24 heures mais peut avoir lieu le lendemain. 
+	Algo : duree_version_2
+		Var  duree ,hd , md ,ha,ma , jour_en_minute, d_mn , d_h: entier;
+		DEBUT : 
+			
+		 	REPETER 
+				AFFICHER ("Saisir l'heure de depart et les minutes") ;
+				LIRE (hd,md) ;		
+			JUSQU’A ( hd >= 0 ET md >= 0 ET  hd < 24  ET md < 60 ) ;
+			
+			
+			
+			REPETER 
+				AFFICHER ("Saisir l'heure de arrive  et les minutes") ;
+				LIRE (ha,ma) ;		
+			JUSQU’A ( ha >= 0 ma >= 0 ET  ha < 24  ET ma < 60) ;
+			
+			
+			//conversion heure depart en minutes
+			SI(hd > 0) Alors
+				md ← md + (hd*60);    
+			FINSI
+
+			//conversion heure arrive en minutes
+			SI(ha > 0) Alors
+				ma ← ma + (ha*60);  
+			FINSI
+			
+			
+			//si la durée ai lieu le lendemain
+			
+			SI (ma < md )ALORS
+				
+				//conversion de 24h en minute
+				
+				jour_en_minute ← 24 * 60 ;	
+					
+				ma ← ma + jour_en_minute ;  	
+		
+			FINSI
+	
+			
+			duree ← ma-md;
+			
+			d_h ← duree div 60 ; 
+			
+			d_mn ← duree mod 60 ; 
+			
+		AFFICHER("la duree du vol en heure et minute est : ",d_h,":",d_mn);
+		
+FIN
+
+
+
+Exercice 10 : Ecrire un algorithme qui lit trois valeurs entières ( A, B et C) et qui permet de les trier par échanges successifs Et enfin les afficher dans l'ordre 4. 
+
+
+Algo : trie_comparaison
+		VAR a , b , c , pg , moy, pp: entier ;
+		DEBUT : 
+			
+			AFFICHER ("saisir 3 nombres entiers") ;
+			LIRE (a,b,c) ;		
+			 // les possibilite de a
+				SI(a > b ET b > c)Alors
+					pg ←  a;
+					moy ←  b;
+					pp ← c;
+				FINSI
+				Si(a > c ET c > b) alors
+					pg ←  a;
+					moy ←  c;
+					pp ←  b;
+				FINSI
+				// les possibilite de b 
+				Si(b > a ET a > c) alors
+					pg ← b;
+					moy ← a;
+					pp ← c;
+				FINSI
+				Si(b > c ET c > a) alors
+					pg ← b;
+					moy ← c;
+					pp ← a;
+				FINSI
+				//passibilite de c
+				Si(c > a ET a > b) alors
+					pg ← c;
+					moy ← a;
+					pp ← b;
+				FINSI
+				Si(c > b ET b > a) alors
+					pg ← c;
+					moy ← b;
+					pp ← a;
+				FINSI
+
+				AFFICHER ("le plus grand est :",pg) ;
+				AFFICHER ("la moyenne est :",moy) ;	
+				AFFICHER ("le plus petit est :",pp) ;
+
+			FIN
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Algo : trie_par_echange
+		VAR a , b , c , svg : entier ;
+		DEBUT : 
+			
+			AFFICHER ("saisir 3 nombres entiers") ;
+			LIRE (a,b,c) ;		
+			 // les possibilites que a soit plus grand
+				SI(a > b ET b > c)Alors
+					svg ←  0;
+					
+				FINSI
+				Si(a > c ET c > b) alors
+					svg ←  b;
+					b ←  c;
+					c ←  svg;
+				FINSI
+				// les possibilités que b soit plus grand
+				Si(b > a ET a > c) alors
+					svg ← a;
+					a ← b;
+					b ← svg;
+				FINSI
+				Si(b > c ET c > a) alors
+					svg ← b;
+					b ← c;
+					c ← a;
+					a ← svg ;
+				FINSI
+				
+				// possibilités de  que c soit plus grand
+				Si(c > a ET a > b) alors
+					svg ← c;
+					c ← b;
+					b ← a;
+					a ← svg;
+				FINSI
+				Si(c > b ET b > a) alors
+					svg ← c;
+					c ← a;
+					a ← svg;
+				FINSI
+
+				AFFICHER ("le plus grand est :",a) ;
+				AFFICHER ("la moyenne est :",b) ;	
+				AFFICHER ("le plus petit est :",c) ;			
+		FIN
+
+
+
+
+
+
+
+
+Exercice 11 : Ecrire un algorithme calculatrice permettant la saisie du premier entier (a) de l'opération ( + ou – ou * ou / : sont des caractères) et du deuxième entier (b) et qui affiche le résultat.
+
+Algo : operation 
+
+Var a , b : entier;
+	op : caractere;
+	result : reel;
+	
+
+DEBUT : 
+ 	
+	
+	AFFICHER ("saisir le premier nombre") ;
+	LIRE (a) ;		
+	AFFICHER ("saisir le deuxieme nombre") ;
+	LIRE (b) ;	
+	
+	REPETER
+		AFFICHER ("saisir l'operateur ( - ou + ou * ou / ) ") ;
+		LIRE (op) ;	
+	JUSQU’A( op = '-' OU op = '+' OU op = '*' OU op = '/') ;
+	
+	SI (operateur = '-' ) ALORS
+		result ←  a - b ;
+	FINSI
+	
+	SI (operateur = '+' ) ALORS
+		result ←  a + b ;
+	FINSI
+	SI (operateur = '*' ) ALORS
+		result ←  a * b ;
+	FINSI
+	
+	SI (operateur = '/' ET b!=0) ALORS
+		result ←  a / b ;
+	FINSI
+	
+	AFFICHER (" le resultat est : ",result);
+FIN
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Exercice 12 : Un nombre est parfait s’il est égal à la somme de ses diviseurs stricts (différents de lui-même). Ainsi par exemple, l’entier 6 est parfait car 6 = 1 + 2 + 3. Écrire un algorithme permettant de déterminer si un entier naturel est un nombre parfait.
+
+Algo : parfait 
+
+Var nbr , som , i : entier;
+	
+	
+
+DEBUT : 
+ 	som <-- 0 ;
+	REPETER
+		AFFICHER ("Saisir un nombre entier naturel") ;
+		LIRE (nbr) ;		
+	JUSQU'A( nbr ) ;
+	 
+	POUR i allant de 1 a nbr-1 FAIRE
+		SI (nb % i == 0)ALORS
+			som ←	 som + i;
+		FINSI
+	FINPOUR
+	
+	SI (som = nbr ) ALORS
+		AFFICHER (nbr," est parfait");
+		SINON
+			AFFICHER (nbr," n'est pas parfait : ");
+	FINSI
+FIN
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Exercice 13 : Faire un programme qui saisit une date (jour, mois et année) at qui indique si la date est valide
+//du 1 au 7ieme mois, les mois impaire compte 31 jours au max
+//et les mois paires comptent 30 jours chauffe fevrier qui 29 jours max
+//et d 8 au 12ieme mois, les mois impaire compte 30 jours max
+//et les mois paires comptent 30 jours
+
+
+Exercice 13 : 
+	Faire un programme qui saisit une date (jour, mois et année) at qui indique si la date est valide
+
+    /** 
+        diviser les mois en deux parties:
+            1. du 1 au 7ieme mois, les mois impaire compte 31 jours au max
+                et les mois paires comptent 30 jours chauffe fevrier qui 29 jours max
+            
+			2. et d 8 au 12ieme mois, les mois impaire compte 30 jours max
+                et les mois paires comptent 31 jours au max
+				
+    **/
+Algo : Valid_date 
+
+Var jj , mm , an : entier;
+	
+
+DEBUT : 
+ 	
+	AFFICHER ("Saisir le jour, le mois et l'année ") ;
+	LIRE (jj,mm,an) ;		
+	
+	
+	
+	
+	
+	
+	
+    SI (mm > 12 OU mm < 1 ) ALORS
+	
+		AFFICHER ("invalide, les mois ne doit pas depasser 12 ni inferieur a 1");
+		
+        SINON
+
+            SI (mm <= 7)ALORS
+			
+                SI(mm mod 2 = 0 ET jj = 31)
+				
+                    AFFICHER ("invalide, ce mois ne compte pas 31 jours");
+					
+                    SINON
+					
+                    SI(mm = 2 ET jj = 29 ET an mod 4 != 0) ALORS             
+						
+						AFFICHER ("invalide, le mois de fevrier de cette annee compte 28 jours");
+
+							SINON 
+
+								SI(jj < 1 ou jj >31 ou an < 1 ou an > 2020) ALORS
+
+									AFFICHER ("jour ou annee invalide");
+
+									SINON                                                 
+
+										AFFICHER (jj,"-",mm,"-",an," est valide");
+								FINSI
+                    FINSI   
+					
+                FINSI
+				
+            FINSI
+            
+			SINON
+                
+				SI(mm mod 2 = 1 ET jj = 31)
+				
+                    AFFICHER ("invalide, ce mois ne compte pas 31 jours");
+                    
+					SINON
+                        
+						SI(jj < 1 ou jj >31 OU an < 1 ) ALORS
+                            
+							AFFICHER ("jour ou annee invalide");
+                            
+							SINON
+                                
+								AFFICHER (jj,"-",mm,"-",an," est valide");
+                        FINSI
+                FINSI
+				
+			FINSI
+
+FIN
+
+
+
+
+Exercice 14 : 
+Faire un programme qui saisit une date (jour, mois et année) at qui indique si l’année est bissextile 
+
+Algo : bissextile 
+
+Var jj , mm , an : entier;
+
+DEBUT : 
+	REPETER
+		AFFICHER ("Saisir le jour") ;
+		LIRE (jj) ; 
+	JUSQU'A (jj > 0 ET jj <=31)
+	
+	REPETER
+		AFFICHER ("Saisir le mois") ;
+		LIRE (mm); 
+	JUSQU'A (mm > 0 ET jj <=12)
+
+	REPETER
+		AFFICHER ("Saisir l'annee") ;
+		LIRE (an); 
+	JUSQU'A (an > 0 )
+
+	SI (an mod 4 = 0 ) ALORS
+		AFFICHER ("l'annee :",an," est bissextile");
+		SINON
+			AFFICHER ("l'annee :",an," n'est pas bissextile");
+	FINSI
+FIN
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Exercice 15 :
+ Ecrire un algorithme qui demande un nombre de départ, et qui calcule la somme des entiers jusqu'à ce nombre. 
+ Par exemple si l'on tape 4 , l’algorithme doit calculer: 1 + 2 + 3+ 4 = 10 
+ Réécrire l'algorithme qui calcule cette fois la moyenne !
+
+
+
+
+ Algo : moyenne 
+
+Var  i , som : entier;
+    nbr , moy : reel;
+
+DEBUT : 
+    REPETER
+        AFFICHER ("Saisir un entier naturel :") ;
+        LIRE (nbr) ;		
+	JUSQU'A (nbr > 0 )
+    
+    som <-- 0;
+    POUR i <-- 1 a nbr FAIRE
+        som = som + i;
+    FINPOUR
+    
+    // partie 1 
+
+    AFFICHER ("la somme des entiers compris entier naturel 1 et ",nbr," est ",som);
+
+    // partie 1 
+
+    moy = som / nbr;
+
+    AFFICHER ("la moyenne est ",moy);
+    
+  
+FIN
+
+
+
+
+
+
+Exercice 16 : 
+Faire un programme qui calcule et affiche la division de a par b par soustractions successives
+
+
+
+
+
+Algo : soustractions_successive 
+
+Var  a , b, result,reste : entier;
+    
+DEBUT : 
+    REPETER
+        AFFICHER ("Saisir la valeur du dividant :") ;
+        LIRE (a) ;		
+	JUSQU'A (a > 0 )
+
+    REPETER
+        AFFICHER ("Saisir la valeur de diviseur:") ;
+        LIRE (b) ;		
+	JUSQU'A (b > 0 )
+
+    
+    result <-- 0;
+    
+    reste <-- a;
+    TANTQUE( b < reste)ALORS
+            
+            reste <-- reste - a;
+
+            result ++;
+
+    FINTANTQUE        
+
+   
+    AFFICHER ("le resultat de la division entier est ",result);
+    AFFICHER ("le reste de la division entier est ",reste);
+    
+  
+FIN
+
+
+
+
+
+Exercice 17: 
+ Faire un programme qui calcule le PGCD de deux nombres saisis au clavier en utilisant l'astuce suivante:
+ soustrait le plus petit des deux entiers du plus grand jusqu'à ce qu'ils soient égaux. 
+
+
+ Algo : soustractions_successive 
+
+Var  val1 , val2, pgcd , d_val1 , div_val2 , i : entier;
+ 
+DEBUT : 
+    
+    REPETER
+        AFFICHER ("Saisir les deux nombres ") ;
+        LIRE (val1, val2) ;		
+	JUSQU'A (val1 > 0 ET val2 > 0);
+
+    SI (val1 < val2) ALORS
+       TANTQUE ( Val2 )
+
+    FINSI
+       
+   
+    AFFICHER ("le resultat de la division entier est ",result);
+    AFFICHER ("le reste de la division entier est ",reste);
+    
+  
+FIN
