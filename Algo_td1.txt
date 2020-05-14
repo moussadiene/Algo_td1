@@ -884,9 +884,8 @@ FIN
 
 
 
-
 Exercice 16 : 
-Faire un programme qui calcule et affiche la division de a par b par soustractions successives
+			Faire un programme qui calcule et affiche la division de a par b par soustractions successives
 
 
 
@@ -911,7 +910,7 @@ DEBUT :
     result <-- 0;
     
     reste <-- a;
-    TANTQUE( b < reste)ALORS
+    TANTQUE ( b < reste ) ALORS
             
             reste <-- reste - a;
 
@@ -923,7 +922,7 @@ DEBUT :
     AFFICHER ("le resultat de la division entier est ",result);
     AFFICHER ("le reste de la division entier est ",reste);
 
-FIN
+FIN 
 
 
 
@@ -933,13 +932,14 @@ Exercice 17:
  Faire un programme qui calcule le PGCD de deux nombres saisis au clavier en utilisant l'astuce suivante:
  soustrait le plus petit des deux entiers du plus grand jusqu'à ce qu'ils soient égaux. 
 
-
- Algo : pgcd
-
-Var  val1 , val2, pgcd , d_val1 , div_val2 , i , n , x : entier;
-
  
- 	TABLEAU tab[1 .. 100] : entier;
+
+// methode 1 : sans boucle 
+
+Algo : pgcd
+
+Var  val1 , val2, pgcd , nbre1 , nbre2 , i , n : entier;
+ 
 
 DEBUT : 
     
@@ -948,6 +948,9 @@ DEBUT :
         LIRE (val1, val2) ;		
 	JUSQU'A (val1 > 0 ET val2 > 0);
 
+
+	nbre1 <-- val1;
+	nbre2 <-- val2;
 	
     SI (val1 < val2) ALORS
        
@@ -958,13 +961,13 @@ DEBUT :
     			n <-- val1 ;
 
     FINSI
-    x  <-- 0;
+
+
    	POUR i <-- 1 a n faire 
 
    		SI (val1 mod i = 0 ET val2 mod i = 0 ) ALORS
 	   			 
-   			 x ++;
-   			 tab[x] <-- i;
+   			pgcd <-- i;
 
    			 val2 <-- val2 div i;
    			 val2 <-- val2 div i;
@@ -982,17 +985,6 @@ DEBUT :
    		FINSI
    
    	FINPOUR
-      
-    pgcd = 0;
-
-   	POUR i <-- 1 a x faire 
-   		
-   		SI ( pgcd < tab[i]) ALORS
-
-			pgcd <-- tab[i];
-
-   		FINSI
-   	FINPOUR
 
    
     AFFICHER ("le pgcd est :  ", pgcd );
@@ -1009,13 +1001,10 @@ FIN
 Exercice 18: Faire un programme qui calcule et affiche le PPCM de deux entiers saisis au clavier.
 
 
-
  Algo : ppcm
 
 Var  val1 , val2, pgcd , d_val1 , div_val2 , i , n , x ,nbre1,nbre2: entier;
 
- 
- 	TABLEAU tab[1 .. 100] : entier;
 
 DEBUT : 
     
@@ -1040,8 +1029,7 @@ DEBUT :
 
    		SI (val1 mod i = 0 ET val2 mod i = 0 ) ALORS
 	   			 
-   			 x ++;
-   			 tab[x] <-- i;
+   			 pgcd <-- i;
 
    			 val2 <-- val2 div i;
    			 val2 <-- val2 div i;
@@ -1060,19 +1048,9 @@ DEBUT :
    
    	FINPOUR
       
-    pgcd = 0;
-
-   	POUR i <-- 1 a x faire 
-   		
-   		SI ( pgcd < tab[i]) ALORS
-
-			pgcd <-- tab[i];
-
-   		FINSI
-   	FINPOUR
 
 
-    ECRIRE ("le PPCM est  ", (nbre1  * nobre) div pgcd );
+    ECRIRE ("le PPCM est  ", (nbre1  * nbre1) div pgcd );
 
 FIN
 
@@ -1140,7 +1118,7 @@ Exercice 20 :
 Algo : prix_articles
 
 const LIMIT 10 ;
-
+²
 Var  val , pg, pp: entier;
 
 DEBUT : 
@@ -1376,56 +1354,12 @@ FIN
 
 
 
-Exercice 26 : Faire un programme qui saisit une suite de nombre et qui dit les si les nombres saisis sont dans l’ordre croissant ou décroissant ou quelconque.
+Exercice 26 : Faire un programme qui saisit une suite de nombre et qui dit les si les nombres saisis sont 
+				dans l’ordre croissant ou décroissant ou quelconque.
 
 
 
 
-
-
-
-Algo : premier
-
-Const LIMIT 10 ;
-
-Var  val , n , i , ordre , n  : entier;
-
-TABLEAU tab [1 .. 100] : entier;
-DEBUT : 
-	
-	  REPETER
-        ECRIRE ("Donner le nombre de valeur que u va saisir ") ;
-        LIRE (n) ;		
-	JUSQU'A (n > 0);
-
-	
-	POUR i <-- 1 a n FAIRE 
-		
-		ECRIRE ("Saisir le nombre ",i) ;
-        LIRE (tab[i]) ;
-
-	FINPOUR
-
-	POUR i <-- 1 a n FAIRE 
-		
-		SI (tab = 2) ALORS
-
-			ECRIRE (val, "est un nombre premier");
-			SINON
-				ECRIRE(val,"n'est pas un nombre premier");
-		FINSI
-		
-
-	FINPOUR
-
-	SI (cpt = 2) ALORS
-
-		ECRIRE (val, "est un nombre premier");
-		SINON
-			ECRIRE(val,"n'est pas un nombre premier");
-	FINSI
-
-FIN
 
 
 
