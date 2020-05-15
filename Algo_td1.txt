@@ -328,7 +328,10 @@ FIN
 
 
 
-Exercice 7 :  Décomposition d’un montant en euros Écrire un algorithme permettant de décomposer un montant entré au clavier en billets de 20, 10, 5 euros et pièces de 2, 1 euros, de façon à minimiser le nombre de billets et de pièces.
+Exercice 7 :  	Décomposition d’un montant en euros Écrire un algorithme permettant de décomposer un montant 
+				entré au clavier en billets de 20, 10, 5 euros et pièces de 2, 1 euros, de façon à 
+				minimiser le nombre de billets et de pièces.
+
 Algo : decomposition
 VAR montant, nb20,nb10,nb5,nb2,nb1 : entier ;
 DEBUT : 
@@ -336,33 +339,22 @@ DEBUT :
 		ECRIRE ("saisir un montant en euro") ;
 		LIRE (montant) ;	
 	JUSQU’A ( montant>0) ;
-	 nb20 ←  0 ;
-	 nb10 ←  0 ;
-	 nb5 ←  0 ;
-	 nb2 ←  0 ;
-	nb1 ←  0 ; 
-	TANQUE ( montant != 0 ) FAIRE
-		SI(montant ≥ 20 )Alors
-			nb20  ←  nb20 + 1 ; 
-			montant ←  montant – 20 ; 
-			SINON SI (montant ≥ 10 )Alors
-				nb10  ←  nb10 + 1 ; 
-				montant ←  montant – 10 ; 
-				SINON SI (montant ≥ 5 )Alors
-					nb5  ←  nb5 + 1 ; 
-					montant ←  montant – 5 ; 
-					SINON SI (montant ≥ 2 )Alors
-						nb2  ←  nb2 + 1 ;
-						montant ←  montant – 2 ; 
-						SINON SI (montant ≥ 1 )Alors
-							nb1  ←  nb1 + 1 ;
-							montant ←  montant – 2 ;
-						FINSI
-					FINSI
-				FINSI
-			FINSI
-		FINSI
-	FINTANQUE
+
+	nb20 ←  montant div 20 ;
+	montant ←  montant mod 20 ;
+
+	nb10 ← montant div 10 ;
+	montant ←  montant mod 10 ;
+
+	nb5 ← montant div 5 ;
+	montant ←  montant mod 5 ;
+	
+	nb2 ← montant div 2 ;
+	montant ←  montant mod 2 ;
+
+	nb1 ← montant div 1 ;
+	montant ←  montant mod 1 ;
+
 	ECRIRE("Apres décomposition de :  ",montant,"euro on a ")
 	ECRIRE(nb2, "de billets de 20 ") ;
 	ECRIRE(nb2, "de billets de 10 ") ;
@@ -434,6 +426,7 @@ Exercice 9 :
 Ecrire un algorithme qui donne la durée de vol en heure minute connaissant l'heure de départ et l'heure d'arrivée. 
 a. On considère que le départ et l'arrivé ont lieu le même jour 
 b. On suppose que la durée de vol est inférieure à 24 heures mais peut avoir lieu le lendemain. 
+
 	Algo : duree_version_2
 		Var  duree ,hd , md ,ha,ma , jour_en_minute, d_mn , d_h: entier;
 		DEBUT : 
@@ -452,16 +445,13 @@ b. On suppose que la durée de vol est inférieure à 24 heures mais peut avoir 
 			
 			
 			//conversion heure depart en minutes
-			SI(hd > 0) Alors
+				
 				md ← md + (hd*60);    
-			FINSI
+			
 
 			//conversion heure arrive en minutes
-			SI(ha > 0) Alors
-				ma ← ma + (ha*60);  
-			FINSI
 			
-			// version 1 :
+				ma ← ma + (ha*60);  
  
 
 
@@ -496,8 +486,7 @@ Exercice 10 : Ecrire un algorithme qui lit trois valeurs entières ( A, B et C)
 
 
 
-
-Algo : trie_par_echange
+Algo : trie_par_echange_successif
 		VAR a , b , c , svg : entier ;
 		DEBUT : 
 			
@@ -538,61 +527,9 @@ Algo : trie_par_echange
 					c ← a;
 					a ← svg;
 				FINSI
-
-				AFFICHER ("le plus grand est :",a) ;
-				AFFICHER ("la moyenne est :",b) ;	
-				AFFICHER ("le plus petit est :",c) ;			
+				AFFICHER ("affichage dans l'ordre croissant:") ;
+				AFFICHER (a, " ",b," ",c) ;			
 		FIN
-
-
-// version 2
-Algo : trie_comparaison
-		VAR a , b , c , pg , moy, pp: entier ;
-		DEBUT : 
-			
-			AFFICHER ("saisir 3 nombres entiers") ;
-			LIRE (a,b,c) ;		
-			 // les possibilite de a
-				SI(a > b ET b > c)Alors
-					pg ←  a;
-					moy ←  b;
-					pp ← c;
-				FINSI
-				Si(a > c ET c > b) alors
-					pg ←  a;
-					moy ←  c;
-					pp ←  b;
-				FINSI
-				// les possibilite de b 
-				Si(b > a ET a > c) alors
-					pg ← b;
-					moy ← a;
-					pp ← c;
-				FINSI
-				Si(b > c ET c > a) alors
-					pg ← b;
-					moy ← c;
-					pp ← a;
-				FINSI
-				//passibilite de c
-				Si(c > a ET a > b) alors
-					pg ← c;
-					moy ← a;
-					pp ← b;
-				FINSI
-				Si(c > b ET b > a) alors
-					pg ← c;
-					moy ← b;
-					pp ← a;
-				FINSI
-
-				AFFICHER ("le plus grand est :",pg) ;
-				AFFICHER ("la moyenne est :",moy) ;	
-				AFFICHER ("le plus petit est :",pp) ;
-
-			FIN
-
-
 
 
 
@@ -731,6 +668,20 @@ DEBUT :
 	AFFICHER ("Saisir le jour, le mois et l'année ") ;
 	LIRE (jj,mm,an) ;		
 	
+
+	SI (jj > 31 OU jj < 1 OU mm > 12 OU mm <1 OU an < 1000 OU an > 2020) ALORS
+
+		AFFICHER (jj,"/",mm,"/",an," est invalid");
+
+		SINON SI(mm >= 7) ALORS
+				
+			FINSI
+
+
+	FINSI
+
+
+
 
     SI (mm > 12 OU mm < 1 ) ALORS
 	
@@ -951,19 +902,9 @@ DEBUT :
 
 	nbre1 <-- val1;
 	nbre2 <-- val2;
-	
-    SI (val1 < val2) ALORS
-       
-    	n <-- val2 ;
-
-    		SINON
-
-    			n <-- val1 ;
-
-    FINSI
 
 
-   	POUR i <-- 1 a n faire 
+    POUR i <-- 1 a n faire 
 
    		SI (val1 mod i = 0 ET val2 mod i = 0 ) ALORS
 	   			 
@@ -1015,6 +956,7 @@ DEBUT :
 
 	nbre1 <-- val1;
 	nbre2 <-- val2;
+
     SI (val1 < val2) ALORS
        
     	n <-- val2 ;
@@ -1105,12 +1047,9 @@ FIN
 
 
 Exercice 20 : 
+
 	Ecrire un algorithme qui demande successivement 10 nombres à l'utilisateur, 
 	et qui affiche à la fin le plus grand de ces 10 nombres Et affiche aussi son rang dans la liste saisie
-
-
-
-
 
 
 
@@ -1217,11 +1156,17 @@ FIN
 
 
 
+
+
+
+
+
+
+
+
+
+
 Exercice 24: Nombre secret : écrire un programme qui demande à l’utilisateur 1 d’entrer un nombre et à l’utilisateur 2 de le trouver en affichant, à chaque tentative, « trop grand » si le nombre entré est plus grand que le nombre secret, « trop petit » sinon. Le programme s’arrête quand l’utilisateur 2 a trouvé le nombre secret.
-
-
-
-
 
 
 
@@ -1285,6 +1230,7 @@ Exercice 25 : Ecrire le code C du programme qui affiche le texte suivant pour l
 2 2 
 3 3 3
 Ecrire un programme qui saisit un nombre et qui dit si ce nombre est premier ou pas.
+
 
 
 
@@ -1354,14 +1300,75 @@ FIN
 
 
 
-Exercice 26 : Faire un programme qui saisit une suite de nombre et qui dit les si les nombres saisis sont 
+Exercice 26 : 	Faire un programme qui saisit une suite de nombre et qui dit les si les nombres saisis sont 
 				dans l’ordre croissant ou décroissant ou quelconque.
 
 
 
 
 
+Algo : croissant
 
+
+Var  nbr , cpt, i ,n, ordre : entier;
+
+
+DEBUT : 
+	
+	ordre <-- 0;
+	
+
+	REPETER
+		ECRIRE ("Donner un nombre element a saisir ") ;
+        LIRE (n) ;
+    JUSQU'A (n);
+
+	POUR i <-- 1 a n FAIRE 
+
+		ECRIRE ("Saisir un nombre entier naturel ") ;
+        LIRE (val) ;		
+
+        SI (i > 1 ) ALORS
+
+        	SI( precedent > val val ET ordre = 0 OU ordre = 1 ) ALORS
+
+        		ordre <-- 1;
+
+        		SINON
+        			SI( precedent < val val ET ordre = 0 OU ordre = 2) ALORS
+
+		        		ordre <-- 2;
+
+		        		SINON
+
+		        			ordre <-- 3;
+		        	FINSI
+        	FINSI
+
+		FINSI
+		   
+ 		precedent <-- val;
+	FINPOUR
+
+	SI(ordre = 1)ALORS
+
+		ECRIRE("la saisie est de l'ordre croissant ");
+
+		SINON SI (ordre = 2 )ALORS
+				
+				ECRIRE("la saisie est de l'ordre descroissant ");
+
+				SINON 
+
+					ECRIRE("la saisie est quelconque");
+
+			FINSI
+
+	FINSI
+
+	
+
+FIN
 
 
 
