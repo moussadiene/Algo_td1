@@ -1,4 +1,13 @@
-exo1 : 
+
+
+===================================================================================================================
+====-----------------------------------------------------------------------------------------------------------====
+===================================================================================================================
+
+
+
+
+exercice 1 : 
 
 Ecrire un programme qui saisit deux entiers a et b, calcule et affiche le 
 quotient entier, le reste de la division et le ratio (quotient réel).
@@ -9,12 +18,12 @@ Var nb1, nb2, rest,qentier : entier ;
 DEBUT : 
  	
 	REPETER
-		Afficher("Saisir le premier nombre entier :") ;
+		Ecrire("Saisir le premier nombre entier :") ;
  		Lire(nb1) ;
 	JUSQU’A (nb1>0) ;
 
 	REPETER
-		Afficher("Saisir les 2ieme nombre entier :") ;
+		Ecrire("Saisir les 2ieme nombre entier :") ;
  		Lire( nb2) ;
 	JUSQU’A (nb2>0) ;
 	
@@ -24,12 +33,12 @@ DEBUT :
 
 	rest ⇐ nb1 mod nb2 ;
 
-		Afficher("le quotient  entier est  :",q)entier ;
+		Ecrire("le quotient  entier est  :",q)entier ;
 
-		Afficher("le quotient  entier est  :",qreel) ;
+		Ecrire("le quotient  entier est  :",qreel) ;
 
 			
-		Afficher("le reste de la division entier est :",rest) ;
+		Ecrire("le reste de la division entier est :",rest) ;
 
 FIN
 
@@ -42,6 +51,9 @@ FIN
 
 
 
+===================================================================================================================
+====-----------------------------------------------------------------------------------------------------------====
+===================================================================================================================
 
 
 
@@ -55,8 +67,10 @@ FIN
 
 
 
-exo2 : 
-Ecrire un programme qui demande à l’utilisateur de donner le rayon d’un cercle et lui retourne sa surface et son périmètre. PI =  4 * arc tangeante de 1. la fonction arc tangeante est atan ex : atan(2).
+
+
+exercice 2 : 
+		Ecrire un programme qui demande à l’utilisateur de donner le rayon d’un cercle et lui retourne sa surface et son périmètre. PI =  4 * arc tangeante de 1. la fonction arc tangeante est atan ex : atan(2).
 
 Algo : cercle 
 
@@ -65,7 +79,7 @@ Var r , surf , peri , pi : reel ;
 DEBUT : 
  	
 	REPETER
-		Afficher("Saisir le rayon du cercle svp  :") ;
+		Ecrire("Saisir le rayon du cercle svp  :") ;
  		Lire(r) ;
 	JUSQU’A (r>0) ;
 
@@ -91,6 +105,9 @@ FIN
 
 
 
+===================================================================================================================
+====-----------------------------------------------------------------------------------------------------------====
+===================================================================================================================
 
 
 
@@ -105,11 +122,13 @@ FIN
 
 
 
-exo 3
-Version 1 :
-Faire un programme qui saisit 3 résistances : R1, R2 et R3.
-Calculer et afficher la résistance en série : R1 + R2 +R3
-Calculer et afficher la résistance en parallèle : (R1 * R2 * R3) / (R1*R2 + R2*R3 + R1*R3)
+
+
+exercice 3:
+	Version 1 :
+		Faire un programme qui saisit 3 résistances : R1, R2 et R3.
+		Calculer et afficher la résistance en série : R1 + R2 +R3
+		Calculer et afficher la résistance en parallèle : (R1 * R2 * R3) / (R1*R2 + R2*R3 + R1*R3)
 
 Algo : resistance_version1
 
@@ -118,17 +137,17 @@ Var r1, r2, r3 , r_serie , r_para , f_serie , f_para : reel ;
 DEBUT : 
  	
 	REPETER
-		Afficher("Saisir le resistance R1 :") ;
+		Ecrire("Saisir le resistance R1 :") ;
  		Lire(r1) ;
 	JUSQU’A (r1>0) ;
 
 	REPETER
-		Afficher("Saisir le resistance R2 :") ;
+		Ecrire("Saisir le resistance R2 :") ;
  		Lire(r2) ;
 	JUSQU’A (r2>0) ;
 
 	REPETER
-		Afficher("Saisir le resistance R3 :") ;
+		Ecrire("Saisir le resistance R3 :") ;
  		Lire(r3) ;
 	JUSQU’A (r3>0) ;
 	
@@ -136,8 +155,8 @@ DEBUT :
 
 	r_para ⇐   (r1 * r2 * r3) / (r1*r2 + r2*r3 + r1*r3)
 
-	Afficher("la resistance en serie  est  :" , r_serie) ;
-	Afficher("le registance en paralelle est  :" , r_para) ;
+	Ecrire("la resistance en serie  est  :" , r_serie) ;
+	Ecrire("le registance en paralelle est  :" , r_para) ;
 FIN
 
 
@@ -145,19 +164,10 @@ FIN
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+Version 2 :
+		Demander a l’utilisateur d’indiquer son choix.
+		S’il entre la valeur  1, calculer et afficher la fréquence en série.
+		S’il entre la valeur 2, calculer et afficher la fréquence en parallèle.
 
 
 Algo : resistance_version2
@@ -166,35 +176,32 @@ Var r1, r2, r3 , r_serie, r_para : réel ;
 	choix : entier ;
 DEBUT : 
 	REPETER 
- 		Afficher("1 - frequence en serie    :" ) ;
-		Afficher("2 - frequence en paralelle ") ;
-		Afficher("3 - quitter ") ;
-		Afficher(" Faite votre choix !!! ") ;
+ 		Ecrire("1 - frequence en serie    :" ) ;
+		Ecrire("2 - frequence en paralelle ") ;
+		Ecrire(" Faite votre choix !!! ") ;
 	JUSQU’A (choix>0 ET choix <3) ;
 	
 	REPETER
-		Afficher("Saisir le resistance R1 :") ;
+		Ecrire("Saisir le resistance R1 :") ;
  		Lire(r1) ;
 	JUSQU’A (r1>0) ;
 
 	REPETER
-		Afficher("Saisir le resistance R2 :") ;
+		Ecrire("Saisir le resistance R2 :") ;
  		Lire(r2) ;
 	JUSQU’A (r2>0) ;
 
 	REPETER
-		Afficher("Saisir le resistance R3 :") ;
+		Ecrire("Saisir le resistance R3 :") ;
  		Lire(r3) ;
 	JUSQU’A (r3>0) ;
 	suivant (choix ) faire
 		option 1 :  
 			r_serie ⇐ r1 + r2 + r3 ;
-			Afficher("la resistance en serie  est  :" , r_serie) ;
+			Ecrire("la resistance en serie  est  :" , r_serie) ;
 		option 2 :
 			r_para = (r1 * r2 * r3) / (r1*r2 + r2*r3 + r1*r3)
-			Afficher("le registance en paralelle est  :" , r_para) ;
-		option 3 :
-			Afficher(" Au revoir") ;
+			Ecrire("le registance en paralelle est  :" , r_para) ;
 	finsuivant
 FIN
 
@@ -203,7 +210,19 @@ FIN
 
 
 
-exo 4 : 
+
+===================================================================================================================
+====-----------------------------------------------------------------------------------------------------------====
+===================================================================================================================
+
+
+
+
+
+
+
+
+exercice 4 : 
 Ecrire un programme qui saisit un réel x et un entier n et affiche x à la puissance n.
 Version 1 : utiliser la fonction pow  du fichier d’en-tête <math.h>  ex : pow(x,n)
 Version 2 : en utilisant un boucle
@@ -216,12 +235,12 @@ Var x, p1, p2 : réel ;
 DEBUT : 
  	
 	REPETER
-		Afficher("Saisir un nombre reel svp  :") ;
+		Ecrire("Saisir un nombre reel svp  :") ;
  		Lire(x) ;
 	JUSQU’A (x>0) ;
 	
 	REPETER
-		Afficher("Saisir l’exposant de ce nombre en entier svp  :") ;
+		Ecrire("Saisir l’exposant de ce nombre en entier svp  :") ;
  		Lire(n) ;
 	JUSQU’A (n>0) ;
 
@@ -234,8 +253,8 @@ DEBUT :
 		p2 ⇐ p2 * x ;
 	FINPOUR
 	
-	Afficher("la puissance avec math.h est  :" , p1) ;
-	Afficher("le puissance avec boucle est  :" , p2) ;
+	Ecrire("la puissance avec math.h est  :" , p1) ;
+	Ecrire("le puissance avec boucle est  :" , p2) ;
 FIN
 
 
@@ -248,13 +267,21 @@ FIN
 
 
 
+===================================================================================================================
+====-----------------------------------------------------------------------------------------------------------====
+===================================================================================================================
 
 
 
 
 
 
-exo 5 :
+
+
+
+
+
+exercice 5 :
 Ecrire un programme qui saisit 5 variables de type entier au clavier et qui affiche leur somme. Utiliser une boucle (for ou while ou do..while).
 
 
@@ -268,14 +295,26 @@ DEBUT :
 	som ⇐ 0 ;
 	
 	POUR i allant de 1 à 5 FAIRE
-		Afficher("Saisir un nombre entier   :") ;
+		Ecrire("Saisir un nombre entier   :") ;
  		Lire(nbr) ;
 		som ⇐ som + nbr ; 
 	FINPOUR
 	
-	Afficher("la somme des 5 nombres saisie est  :" , som) ;
+	Ecrire("la somme des 5 nombres saisie est  :" , som) ;
 	
 FIN
+
+
+
+
+
+
+
+
+===================================================================================================================
+====-----------------------------------------------------------------------------------------------------------====
+===================================================================================================================
+
 
 
 
@@ -302,7 +341,7 @@ DEBUT :
 	Afficher("Saisir les deux coordonnées du point B:") ;
  	Lire(x2,y2) ;	
 
-	dist = sqrt(pow(x1-x2,2) + pow(x2-y2,2)) ;
+	dist  <-- sqrt(pow(x1-x2,2) + pow(x2-y2,2)) ;
 
 FIN
 
@@ -315,6 +354,11 @@ FIN
 
 
 
+
+
+===================================================================================================================
+====-----------------------------------------------------------------------------------------------------------====
+===================================================================================================================
 
 
 
@@ -363,6 +407,18 @@ DEBUT :
 	ECRIRE(nb2, "de piece de 1 ") ;
 FIN
 	
+
+
+
+
+
+
+===================================================================================================================
+====-----------------------------------------------------------------------------------------------------------====
+===================================================================================================================
+
+
+
 
 
 
@@ -416,6 +472,11 @@ FIN
 
 
 
+===================================================================================================================
+====-----------------------------------------------------------------------------------------------------------====
+===================================================================================================================
+
+
 
 
 
@@ -432,14 +493,14 @@ b. On suppose que la durée de vol est inférieure à 24 heures mais peut avoir 
 		DEBUT : 
 			
 		 	REPETER 
-				AFFICHER ("Saisir l'heure de depart et les minutes") ;
+				ECRIRE ("Saisir l'heure de depart et les minutes") ;
 				LIRE (hd,md) ;		
 			JUSQU’A ( hd >= 0 ET  hd < 24  ET  md >= 0   ET md < 60 ) ;
 			
 			
 			
 			REPETER 
-				AFFICHER ("Saisir l'heure de arrive  et les minutes") ;
+				ECRIRE ("Saisir l'heure de arrive  et les minutes") ;
 				LIRE (ha,ma) ;		
 			JUSQU’A ( ha >= 0 ma >= 0 ET  ha < 24  ET ma < 60) ;
 			
@@ -476,13 +537,28 @@ b. On suppose que la durée de vol est inférieure à 24 heures mais peut avoir 
 			
 			d_mn ← duree mod 60 ; 
 			
-		AFFICHER("la duree du vol en heure et minute est : ",d_h,":",d_mn);
+		ECRIRE("la duree du vol en heure et minute est : ",d_h,":",d_mn);
 		
 FIN
 
 
 
-Exercice 10 : Ecrire un algorithme qui lit trois valeurs entières ( A, B et C) et qui permet de les trier par échanges successifs Et enfin les afficher dans l'ordre 4. 
+
+
+
+
+===================================================================================================================
+====-----------------------------------------------------------------------------------------------------------====
+===================================================================================================================
+
+
+
+
+
+
+
+Exercice 10 : Ecrire un algorithme qui lit trois valeurs entières ( A, B et C) et qui permet de les trier par 
+				échanges successifs Et enfin les afficher dans l'ordre . 
 
 
 
@@ -490,7 +566,7 @@ Algo : trie_par_echange_successif
 		VAR a , b , c , svg : entier ;
 		DEBUT : 
 			
-			AFFICHER ("saisir 3 nombres entiers") ;
+			ECRIRE ("saisir 3 nombres entiers") ;
 			LIRE (a,b,c) ;		
 			 // les possibilites que a soit plus grand
 				SI(a > b ET b > c)Alors
@@ -527,9 +603,23 @@ Algo : trie_par_echange_successif
 					c ← a;
 					a ← svg;
 				FINSI
-				AFFICHER ("affichage dans l'ordre croissant:") ;
-				AFFICHER (a, " ",b," ",c) ;			
+				ECRIRE ("affichage dans l'ordre croissant:") ;
+				ECRIRE (a, " ",b," ",c) ;			
 		FIN
+
+
+
+
+
+
+
+===================================================================================================================
+====-----------------------------------------------------------------------------------------------------------====
+===================================================================================================================
+
+
+
+
 
 
 
@@ -546,13 +636,13 @@ Var a , b : entier;
 DEBUT : 
  	
 	
-	AFFICHER ("saisir le premier nombre") ;
+	ECRIRE ("saisir le premier nombre") ;
 	LIRE (a) ;		
-	AFFICHER ("saisir le deuxieme nombre") ;
+	ECRIRE ("saisir le deuxieme nombre") ;
 	LIRE (b) ;	
 	
 	REPETER
-		AFFICHER ("saisir l'operateur ( - ou + ou * ou / ) ") ;
+		ECRIRE ("saisir l'operateur ( - ou + ou * ou / ) ") ;
 		LIRE (op) ;	
 	JUSQU’A( op = '-' OU op = '+' OU op = '*' OU op = '/') ;
 	
@@ -571,7 +661,7 @@ DEBUT :
 		result ←  a / b ;
 	FINSI
 	
-	AFFICHER (" le resultat est : ",result);
+	ECRIRE (" le resultat est : ",result);
 FIN
 
 
@@ -579,6 +669,11 @@ FIN
 
 
 
+
+
+===================================================================================================================
+====-----------------------------------------------------------------------------------------------------------====
+===================================================================================================================
 
 
 
@@ -600,7 +695,7 @@ Var nbr , som , i : entier;
 DEBUT : 
  	som <-- 0 ;
 	REPETER
-		AFFICHER ("Saisir un nombre entier naturel") ;
+		ECRIRE ("Saisir un nombre entier naturel") ;
 		LIRE (nbr) ;		
 	JUSQU'A( nbr ) ;
 	 
@@ -611,9 +706,9 @@ DEBUT :
 	FINPOUR
 	
 	SI (som = nbr ) ALORS
-		AFFICHER (nbr," est parfait");
+		ECRIRE (nbr," est parfait");
 		SINON
-			AFFICHER (nbr," n'est pas parfait : ");
+			ECRIRE (nbr," n'est pas parfait : ");
 	FINSI
 FIN
 
@@ -639,11 +734,14 @@ FIN
 
 
 
-Exercice 13 : Faire un programme qui saisit une date (jour, mois et année) at qui indique si la date est valide
-//du 1 au 7ieme mois, les mois impaire compte 31 jours au max
-//et les mois paires comptent 30 jours chauffe fevrier qui 29 jours max
-//et d 8 au 12ieme mois, les mois impaire compte 30 jours max
-//et les mois paires comptent 30 jours
+
+===================================================================================================================
+====-----------------------------------------------------------------------------------------------------------====
+===================================================================================================================
+
+
+
+
 
 
 Exercice 13 : 
@@ -665,79 +763,50 @@ Var jj , mm , an : entier;
 
 DEBUT : 
  	
-	AFFICHER ("Saisir le jour, le mois et l'année ") ;
+	ECRIRE ("Saisir le jour, le mois et l'année ") ;
 	LIRE (jj,mm,an) ;		
 	
 
 	SI (jj > 31 OU jj < 1 OU mm > 12 OU mm <1 OU an < 1000 OU an > 2020) ALORS
 
-		AFFICHER (jj,"/",mm,"/",an," est invalid");
+		ECRIRE (jj,"/",mm,"/",an," est invalid");
 
-		SINON SI(mm >= 7) ALORS
+		SINON 
+		SI(mm >= 7) ALORS
+			SI(mm mod 2 = 0 ET jj = 31);
 				
+                ECRIRE ("invalide, ce mois ne compte pas 31 jours");
+					
+                SINON	
+                SI(mm = 2 ET jj = 29 ET (an mod 4 != 0 ou an mod 100!=0) ALORS             
+						
+					ECRIRE ("invalide, le mois de fevrier de cette annee compte 28 jours");
+
+					SINON
+						ECRIRE (jj,"-",mm,"-",an," est valide");
+
+				FINSI
 			FINSI
 
-
+			SI(mm mod 2 = 1 ET jj = 31)
+				
+                ECRIRE ("invalide, ce mois compte 30 jours");
+                    
+				SINON
+					ECRIRE (jj,"-",mm,"-",an," est valide");	
+			FINSI
+		FINSI
 	FINSI
 
 
-
-
-    SI (mm > 12 OU mm < 1 ) ALORS
-	
-		AFFICHER ("invalide, les mois ne doit pas depasser 12 ni inferieur a 1");
-		
-        SINON
-
-            SI (mm <= 7)ALORS
-			
-                SI(mm mod 2 = 0 ET jj = 31)
-				
-                    AFFICHER ("invalide, ce mois ne compte pas 31 jours");
-					
-                    SINON
-					
-                    SI(mm = 2 ET jj = 29 ET an mod 4 != 0) ALORS             
-						
-						AFFICHER ("invalide, le mois de fevrier de cette annee compte 28 jours");
-
-							SINON 
-
-								SI(jj < 1 ou jj >31 ou an < 1 ou an > 2020) ALORS
-
-									AFFICHER ("jour ou annee invalide");
-
-									SINON                                                 
-
-										AFFICHER (jj,"-",mm,"-",an," est valide");
-								FINSI
-                    FINSI   
-					
-                FINSI
-				
-            FINSI
-            
-			SINON
-                
-				SI(mm mod 2 = 1 ET jj = 31)
-				
-                    AFFICHER ("invalide, ce mois ne compte pas 31 jours");
-                    
-					SINON
-                        
-						SI(jj < 1 ou jj >31 OU an < 1 ) ALORS
-                            
-							AFFICHER ("jour ou annee invalide");
-                            
-							SINON
-                                
-								AFFICHER (jj,"-",mm,"-",an," est valide");
-                        FINSI
-                FINSI
-				
-			FINSI
-
 FIN
+
+
+===================================================================================================================
+====-----------------------------------------------------------------------------------------------------------====
+===================================================================================================================
+
+
 
 
 
@@ -748,32 +817,53 @@ Exercice 14 :
 Algo : bissextile 
 
 Var jj , mm , an : entier;
-
+			valid : booleen;
 DEBUT : 
-	REPETER
-		AFFICHER ("Saisir le jour") ;
-		LIRE (jj) ; 
-	JUSQU'A (jj > 0 ET jj <=31)
+
+	ECRIRE ("Saisir le jour, le mois et l'année ") ;
+	LIRE (jj,mm,an) ;		
 	
-	REPETER
-		AFFICHER ("Saisir le mois") ;
-		LIRE (mm); 
-	JUSQU'A (mm > 0 ET jj <=12)
 
-	REPETER
-		AFFICHER ("Saisir l'annee") ;
-		LIRE (an); 
-	JUSQU'A (an > 0 )
+	SI (jj > 31 OU jj < 1 OU mm > 12 OU mm <1 OU an < 1000 OU an > 2020) ALORS
+		valid <-- faux ;
 
-	SI (an mod 4 = 0 et an mod 100 != 0) ALORS
-		AFFICHER ("l'annee :",an," est bissextile");
-		SINON
-			SI (an mod 4 = 0)
-				AFFICHER ("l'annee :",an," est bissextile");
-				SINON
-					AFFICHER ("l'annee :",an," n'est pas bissextile");
+		SINON 
+		SI(mm >= 7) ALORS
+			SI(mm mod 2 = 0 ET jj = 31);
+                valid <-- faux ;
+					
+                SINON	
+                SI(mm = 2 ET jj = 29 ET (an mod 4 != 0 ou an mod 100!=0) ALORS             
+					valid <-- faux ;
+
+					SINON
+						valid <-- vrai;
+
+				FINSI
 			FINSI
+
+			SI(mm mod 2 = 1 ET jj = 31)
+                valid <-- faux;
+                    
+				SINON
+					valid <-- vrai;	
+			FINSI
+		FINSI
 	FINSI
+
+	SI (valid = vrai) ALORS
+		SI (an mod 4 = 0 ET an mod 100 != 0) ALORS
+			ECRIRE ("l'annee :",an," est bissextile");
+			SINON	
+				ECRIRE ("l'annee :",an," n'est pas bissextile");
+		FINSI
+
+		SINON
+			ECRIRE (jj,"/",mm,"/",an," n'est pas valide");
+	FINSI
+
+	
+	
 FIN
 
 
@@ -783,6 +873,12 @@ FIN
 
 
 
+
+
+
+=================================================================
+====---------------------------------------------------------====
+=================================================================
 
 
 
@@ -809,7 +905,7 @@ Var  i , som : entier;
 
 DEBUT : 
     REPETER
-        AFFICHER ("Saisir un entier naturel :") ;
+        ECRIRE ("Saisir un entier naturel :") ;
         LIRE (nbr) ;		
 	JUSQU'A (nbr > 0 )
     
@@ -820,16 +916,26 @@ DEBUT :
     
     // partie 1 
 
-    AFFICHER ("la somme des entiers compris entier naturel 1 et ",nbr," est ",som);
+    ECRIRE ("la somme des entiers compris entier naturel 1 et ",nbr," est ",som);
 
     // partie 1 
 
     moy = som / nbr;
 
-    AFFICHER ("la moyenne est ",moy);
+    ECRIRE ("la moyenne est ",moy);
     
   
 FIN
+
+
+
+=================================================================
+====---------------------------------------------------------====
+=================================================================
+
+
+
+
 
 
 
@@ -848,14 +954,14 @@ Var  a , b, result,reste : entier;
     
 DEBUT : 
     REPETER
-        AFFICHER ("Saisir la valeur du dividant :") ;
+        ECRIRE ("Saisir la valeur du dividant :") ;
         LIRE (a) ;		
-	JUSQU'A (a > 0 )
+	JUSQU'A (a > 0 );
 
     REPETER
-        AFFICHER ("Saisir la valeur de diviseur:") ;
+        ECRIRE ("Saisir la valeur de diviseur:") ;
         LIRE (b) ;		
-	JUSQU'A (b > 0 )
+	JUSQU'A (b > 0 );
 
     
     result <-- 0;
@@ -870,10 +976,21 @@ DEBUT :
     FINTANTQUE        
 
    
-    AFFICHER ("le resultat de la division entier est ",result);
-    AFFICHER ("le reste de la division entier est ",reste);
+    ECRIRE ("le resultat de la division entier est ",result);
+    ECRIRE ("le reste de la division entier est ",reste);
 
 FIN 
+
+
+
+
+
+
+===================================================================================================================
+====-----------------------------------------------------------------------------------------------------------====
+===================================================================================================================
+
+
 
 
 
@@ -889,7 +1006,7 @@ Exercice 17:
 
 Algo : pgcd
 
-Var  val1 , val2, pgcd , nbre1 , nbre2 , i , n : entier;
+Var  val1 , val2  : entier;
  
 
 DEBUT : 
@@ -899,42 +1016,21 @@ DEBUT :
         LIRE (val1, val2) ;		
 	JUSQU'A (val1 > 0 ET val2 > 0);
 
+    TANTQUE(val1 != val2)
 
-	nbre1 <-- val1;
-	nbre2 <-- val2;
+    	SI(val1 < val2 ) ALORS
+    		val2 <-- val2 - val1 ;
+    		SINO
+				val2 <-- val2 - val1 ;
+		FINSI    		
+	FINTANTQUE
 
-
-    POUR i <-- 1 a n faire 
-
-   		SI (val1 mod i = 0 ET val2 mod i = 0 ) ALORS
-	   			 
-   			pgcd <-- i;
-
-   			 val2 <-- val2 div i;
-   			 val2 <-- val2 div i;
-
-	   		SINON
-	   			SI (val1 mod i = 0 ) ALORS
-	   				val1 <-- val1 div i;
-	   				SINON
-	   					SI (val2 mod i = 0 ) ALORS
-			   				val2 <-- val2 div i;	
-			   			FINSI
-
-	   			FINSI
-
-   		FINSI
-   
-   	FINPOUR
-
-   
-    AFFICHER ("le pgcd est :  ", pgcd );
-
-FIN
+	ECRIRE ("le PGCD est :",val2);
 
 
-
-
+===================================================================================================================
+====-----------------------------------------------------------------------------------------------------------====
+===================================================================================================================
 
 
 
@@ -944,58 +1040,39 @@ Exercice 18: Faire un programme qui calcule et affiche le PPCM de deux entiers 
 
  Algo : ppcm
 
-Var  val1 , val2, pgcd , d_val1 , div_val2 , i , n , x ,nbre1,nbre2: entier;
+Var  val1 , val2 ,nbre1,nbre2: entier;
 
 
 DEBUT : 
     
-    REPETER
+     REPETER
         ECRIRE ("Saisir les deux nombres ") ;
         LIRE (val1, val2) ;		
 	JUSQU'A (val1 > 0 ET val2 > 0);
-
+	
 	nbre1 <-- val1;
 	nbre2 <-- val2;
 
-    SI (val1 < val2) ALORS
-       
-    	n <-- val2 ;
-
+    TANTQUE(val1 != val2)
+    	
+    	SI(val1 < val2 ) ALORS
+    		val2 <-- val2 - val1 ;
     		SINON
+				val2 <-- val2 - val1 ;
+		FINSI    		
+	FINTANTQUE
 
-    			n <-- val1 ;
+	ECRIRE ("le PGCD est :",val1);
 
-    FINSI
-    x  <-- 0;
-   	POUR i <-- 1 a n faire 
-
-   		SI (val1 mod i = 0 ET val2 mod i = 0 ) ALORS
-	   			 
-   			 pgcd <-- i;
-
-   			 val2 <-- val2 div i;
-   			 val2 <-- val2 div i;
-
-	   		SINON
-	   			SI (val1 mod i = 0 ) ALORS
-	   				val1 <-- val1 div i;
-	   				SINON
-	   					SI (val2 mod i = 0 ) ALORS
-			   				val2 <-- val2 div i;	
-			   			FINSI
-
-	   			FINSI
-
-   		FINSI
-   
-   	FINPOUR
-      
-
-
-    ECRIRE ("le PPCM est  ", (nbre1  * nbre1) div pgcd );
+    ECRIRE ("le PPCM est ", (nbre1  * nbre1) div val1 );
 
 FIN
 
+
+
+===================================================================================================================
+====-----------------------------------------------------------------------------------------------------------====
+===================================================================================================================
 
 
 
@@ -1043,6 +1120,12 @@ FIN
 
 
 
+===================================================================================================================
+====-----------------------------------------------------------------------------------------------------------====
+===================================================================================================================
+
+
+
 
 
 
@@ -1054,11 +1137,11 @@ Exercice 20 :
 
 
 
-Algo : prix_articles
+Algo : max_liste
 
 const LIMIT 10 ;
 ²
-Var  val , pg, pp: entier;
+Var  val , max, rang: entier;
 
 DEBUT : 
 	
@@ -1068,22 +1151,20 @@ DEBUT :
 		LIRE (val) ;
 
    		SI( i = 1)ALORS
-   			pp <-- val;
-   			pg <-- val;	
-   		FINSI
+   			max <-- val;
+   			rang <-- i;	
 
-   		SI ( val < pp ) ALORS 
-			pp <-- val;
-   		FINSI
-
-		SI ( val > pg ) ALORS 
-			pg <-- val;
+   			SINON
+   				SI ( val > max ) ALORS 
+					max <-- val;
+					rang <-- i;
+		   		FINSI
    		FINSI
 
    	FINPOUR
 	
-    ECRIRE ("le nombre le plus grand est  :",pg );
-    ECRIRE ("le nombre le plus petit est  :",pp );
+    ECRIRE ("le nombre le plus grand est  :",max );
+    ECRIRE ("son rang dans la liste saisie est :",rang);
 
 FIN
 
@@ -1091,6 +1172,11 @@ FIN
 
 
 
+
+
+===================================================================================================================
+====-----------------------------------------------------------------------------------------------------------====
+===================================================================================================================
 
 
 
@@ -1131,17 +1217,17 @@ DEBUT :
 		 cpt ++ ;
 		SI (test < val )ALORS
 
-			ECRIRE(" plus grand encore ");
+			ECRIRE("l'entier plus grand  ");
 
 			SINON
 
 				SI (test > val )ALORS
 
-					ECRIRE (" plus petit encore ") ;
+					ECRIRE ("l'entier plus petit  ") ;
 
 					SINON 
 
-						ECRIRE ("Trouvez : vous avez fait ", test," tentative ") ;
+						ECRIRE ("Trouvez !!! vous avez fait ", cpt," tentative ") ;
 
 				FINSI
 		FINSI
@@ -1154,15 +1240,154 @@ FIN
 
 
 
+===================================================================================================================
+====-----------------------------------------------------------------------------------------------------------====
+===================================================================================================================
+
+
+
+
+Exercice 22 : 
+		On se propose de saisir N entiers différents entre 1 et 100 (N étant un entier naturel compris entre 10 et 50) puis afficher la plus longue séquence croissante tout en précisant la position du premier nombre de cette séquence.
+			Exemple : Pour N=15
+ 								1  2  3.  1  2  3  4  5  6  7  8 . 2  3  4  5 
+		Le programme affiche :
+		La plus longue séquence est 1 * 2 * 3 * 4 * 5 * 6 * 7 * 8 *   qui débute à la position 4  et elle est de longueur 7
 
 
 
 
 
 
+Algo : sequence_croissante
+
+
+Var  N , i , posG,long,maxlong: entier;
+	
+	tab TABLEAU[1..50] : entier ;
+DEBUT : 	
+	
+	
+	REPETER 
+		ECRIRE ("Saisir un entier naturel ") ;
+		LIRE (N) ;
+   	JUSQU'A (N >= 1 ET N <= 50);
+
+
+   	POUR i <-- 1 a N FAIRE
+
+   		REPETER 
+			ECRIRE ("Saisir un entier naturel ") ;
+			LIRE (tab[i]) ;
+	   	JUSQU'A (tab[i] >= 1 ET tab[i] <= 100);
+	   	
+   	FINPOUR 
+
+   	   
+
+   	posD <-- 1;
+   	long <-- 1;
+   	maxlong <-- 1;
+   													//1  2  3.  1  2  3  4  5  6  7  8 . 2  3  4  5 
+   	POUR i <-- 1 a N-1 FAIRE
+
+		SI(tab[i] < tab[i+1]) ALORS           //1 inf 2   2 inf 3  	3 inf 1	  1 inf 2	  7 inf 8  8 inf 2	....
+	   		long ++ ;							//2		   3						2		  8
+			SINON
+				SI(maxlong < long )ALORS    	//					1 inf 3						  3 inf 8	....
+					maxlong <--long ;			//					mx=3						  mx=8		....
+					posD <-- i - long +1;		//					po=3-3+1				   po=11-8+1=4	....
+				FINSI
+				long <-- 1;						//					l = 1									....
+	   	FINSI
+	FINPOUR
+
+	POUR i <-- posD a maxlong FAIRE
+
+		ECRIRE(tab[i]," * ");
+		
+	FINPOUR
+
+	ECRIRE(" débute à la position ",posD," et elle est de longueur ",maxlong);
+FIN
 
 
 
+===================================================================================================================
+====-----------------------------------------------------------------------------------------------------------====
+===================================================================================================================
+
+
+
+Exercice 23. 
+		La multiplication des lapins. Vous allez faire l’acquisition d’un couple de bébés lapins. Au bout d’un mois ce couple est adulte. Le mois suivant il donne naissance à un couple de bébés lapins : vous avez maintenant 4 lapins. Puis chaque couple engendre tous les mois un nouveau couple deux mois après sa naissance. 
+		Nous avons le schéma ci-contre :
+			 Légende : m : bébé lapin ; M : lapin adulte. 
+				• Mois 0. m m 
+				• Mois 1. M M 
+				• Mois 2. M M m m 
+				• Mois 3. M M M M m m
+				• Mois 4. M M M M M M m m m m 
+		Notons FN le nombre de lapins que l’on a au bout du N-ième mois. On convient que : F0 = 2. Nous avons donc F1 = 2 puis F2 = 4 et F3 = 6. Plaçons-nous au mois N + 2, nous aurons tous les couples de lapins du mois précédent (le mois N + 1) et toutes les progénitures des couples de lapins du mois N. Nous avons donc la relation : FN+2 = FN+1 + FN
+		
+		Rédiger un programme qui calcule de manière itérative le nombre de lapins au bout d’un an (le mois N = 12). 
+		 Au bout de combien de mois dépasse-t’on le milliard de lapins ?
+
+
+
+
+
+Algo : suite_estimation_lapin
+
+Const N = 12 , MLLD = 1000000000;
+
+Var  m, M, nbr_m,nbr_M ,FN, i , estim: entier;
+
+DEBUT : 
+	m <-- 2;						// mois 0 : nombre de bebe lapins ;
+	M <-- 0;						// mois 0 : nombre de lapin adulte ;
+	nbr_m <-- 0;			
+	nbr_M <-- 0;
+
+	POUR i <-- 1 a N FAIRE
+
+		SI(i = 1)ALORS
+			M <-- m;				// mois 1 : nombre de bebe lapins ;
+			m <-- 0;				// mois 1 : nombre de lapins adultes;
+
+			SINON
+				nbr_m <-- nbr_m + m;	// determine le nombre de bebe lapins 
+				nbr_M <-- nbr_M + M;	// determine le nombre de lapins Adultes
+				
+				FN <-- nbr_M + nbr_m;	// determine le nombre de lapins
+
+				nbr_m <-- nbr_m ;			// stockage de nombre de bebe lapins a venir au mois prochain
+
+				nbr_M <-- FN ;				// stockage de nombre d'adulte lapins a venir au mois prochain
+		FIN
+		
+	FINPOUR
+	
+	ECRIRE("le nombre de lapins au bout de ",N," mois est : ",FN);
+
+	// estimation avec regle des trois  en tenant compte du mots "depasse"
+
+	SI((MLLD * N) mod FN = 0)ALORS 
+		estime <-- ((MLLD * N) div FN) + 1;	 
+
+		SINON
+			estime <-- (MLLD * N) div FN ;
+	FINSI
+
+	ECRIRE("le nombre de depasse ",MLLD," au bout de ",estime," mois");
+
+
+FIN
+
+
+===================================================================================================================
+====-----------------------------------------------------------------------------------------------------------====
+===================================================================================================================
 
 
 
@@ -1177,34 +1402,31 @@ Exercice 24: Nombre secret : écrire un programme qui demande à l’utilisateur
 Algo : jeu_devinette
 
 
-Var  val , cpt, test : entier;
+Var  val , test : entier;
 
 DEBUT : 
 	
 	ECRIRE ("Utilisateur 1 : Saisir le nombre secret ") ;
 	LIRE (val) ;	
 	
-	cpt <-- 0;
 	REPETER 
 
 		ECRIRE ("Utilsateur 2 : deviner le nombre secret ");
 		Lire(test);
 		 
-		 cpt ++ ;
 		SI (test < val )ALORS
+			ECRIRE(" trop petit ");
 
-			ECRIRE(" plus petit ");
+			SINON SI (test > val )ALORS
+					ECRIRE (" trop grand ") ;
 
-			SINON
-
-				SI (test > val )ALORS
-
-					ECRIRE (" plus grand ") ;
-
+					SINON
+						ECRIRE(" nombre secret trouvé");
 				FINSI
 		FINSI
 
    	JUSQU'A (test = val );
+
 
 FIN
 
@@ -1216,6 +1438,9 @@ FIN
 
 
 
+===================================================================================================================
+====-----------------------------------------------------------------------------------------------------------====
+===================================================================================================================
 
 
 
@@ -1259,6 +1484,7 @@ FIN
 //partie 2
 
 
+
 Algo : premier
 
 Const LIMIT 10 ;
@@ -1298,17 +1524,21 @@ FIN
 
 
 
+===================================================================================================================
+====-----------------------------------------------------------------------------------------------------------====
+===================================================================================================================
+
+
+
+
+
 
 
 Exercice 26 : 	Faire un programme qui saisit une suite de nombre et qui dit les si les nombres saisis sont 
 				dans l’ordre croissant ou décroissant ou quelconque.
 
 
-
-
-
 Algo : croissant
-
 
 Var  nbr , cpt, i ,n, ordre : entier;
 
@@ -1319,28 +1549,25 @@ DEBUT :
 	
 
 	REPETER
-		ECRIRE ("Donner un nombre element a saisir ") ;
+		ECRIRE ("Donner le nombre d'elements a saisir ") ;
         LIRE (n) ;
-    JUSQU'A (n);
+    JUSQU'A (n > 1);
 
 	POUR i <-- 1 a n FAIRE 
-
-		ECRIRE ("Saisir un nombre entier naturel ") ;
-        LIRE (val) ;		
-
+		REPETER
+			ECRIRE ("Saisir un nombre entier naturel ") ;
+	        LIRE (val) ;		
+	    JUSQU'A(val > 0 );
+       
         SI (i > 1 ) ALORS
-
-        	SI( precedent > val val ET ordre = 0 OU ordre = 1 ) ALORS
-
+        	SI( precedent < val ET ordre = 0 OU ordre = 1) ALORS
         		ordre <-- 1;
 
         		SINON
-        			SI( precedent < val val ET ordre = 0 OU ordre = 2) ALORS
-
+        			SI( precedent > val ET ordre = 0 OU ordre = 2) ALORS
 		        		ordre <-- 2;
 
 		        		SINON
-
 		        			ordre <-- 3;
 		        	FINSI
         	FINSI
@@ -1351,15 +1578,12 @@ DEBUT :
 	FINPOUR
 
 	SI(ordre = 1)ALORS
-
-		ECRIRE("la saisie est de l'ordre croissant ");
-
+		ECRIRE("la saisie est dans l'ordre croissant ");
+		
 		SINON SI (ordre = 2 )ALORS
-				
-				ECRIRE("la saisie est de l'ordre descroissant ");
+				ECRIRE("la saisie est dans l'ordre decroissant ");
 
 				SINON 
-
 					ECRIRE("la saisie est quelconque");
 
 			FINSI
@@ -1375,6 +1599,11 @@ FIN
 
 
 
+
+
+===================================================================================================================
+====-----------------------------------------------------------------------------------------------------------====
+===================================================================================================================
 
 
 
