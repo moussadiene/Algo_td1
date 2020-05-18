@@ -132,7 +132,7 @@ exercice 3:
 
 Algo : resistance_version1
 
-Var r1, r2, r3 , r_serie , r_para , f_serie , f_para : reel ;
+Var r1, r2, r3 , r_serie , r_para : reel ;
 	choix : entier ;
 DEBUT : 
  	
@@ -197,14 +197,13 @@ DEBUT :
 	JUSQU’A (r3>0) ;
 	suivant (choix ) faire
 		option 1 :  
-			r_serie ⇐ r1 + r2 + r3 ;
-			Ecrire("la resistance en serie  est  :" , r_serie) ;
+			f_serie ⇐ (r1 + r2 + r3) / r_serie ;
+			Afficher("la resistance en serie  est  :" , f_serie) ;
 		option 2 :
-			r_para = (r1 * r2 * r3) / (r1*r2 + r2*r3 + r1*r3)
-			Ecrire("le registance en paralelle est  :" , r_para) ;
+			r_para = (r1 + r2 + r3) / r_para ;
+			Afficher("le registance en paralelle est  :" , r_para) ;
 	finsuivant
 FIN
-
 
 
 
@@ -214,9 +213,6 @@ FIN
 ===================================================================================================================
 ====-----------------------------------------------------------------------------------------------------------====
 ===================================================================================================================
-
-
-
 
 
 
@@ -288,7 +284,7 @@ Ecrire un programme qui saisit 5 variables de type entier au clavier et qui affi
 
 Algo : somme_boucle 
 
-Var nbr , som : entier ;
+Var nbr , som, i : entier ;
 
 DEBUT : 
  	
@@ -343,6 +339,7 @@ DEBUT :
 
 	dist  <-- sqrt(pow(x1-x2,2) + pow(x2-y2,2)) ;
 
+	Ecrire("la distance est ", dist);
 FIN
 
 
@@ -852,7 +849,9 @@ DEBUT :
 	FINSI
 
 	SI (valid = vrai) ALORS
+
 		SI (an mod 4 = 0 ET an mod 100 != 0) ALORS
+
 			ECRIRE ("l'annee :",an," est bissextile");
 			SINON	
 				ECRIRE ("l'annee :",an," n'est pas bissextile");
@@ -876,9 +875,9 @@ FIN
 
 
 
-=================================================================
-====---------------------------------------------------------====
-=================================================================
+============================================================================================================
+====----------------------------------------------------------------------------------------------------====
+============================================================================================================
 
 
 
@@ -896,9 +895,7 @@ Exercice 15 :
  Réécrire l'algorithme qui calcule cette fois la moyenne !
 
 
-
-
- Algo : moyenne 
+Algo : moyenne 
 
 Var  i , som : entier;
     nbr , moy : reel;
@@ -944,10 +941,6 @@ FIN
 Exercice 16 : 
 			Faire un programme qui calcule et affiche la division de a par b par soustractions successives
 
-
-
-
-
 Algo : soustractions_successive 
 
 Var  a , b, result,reste : entier;
@@ -967,9 +960,9 @@ DEBUT :
     result <-- 0;
     
     reste <-- a;
-    TANTQUE ( b < reste ) ALORS
+    TANTQUE ( b <= reste ) ALORS
             
-            reste <-- reste - a;
+            reste <-- reste - b;
 
             result ++;
 
@@ -1002,8 +995,6 @@ Exercice 17:
 
  
 
-// methode 1 : sans boucle 
-
 Algo : pgcd
 
 Var  val1 , val2  : entier;
@@ -1027,7 +1018,7 @@ DEBUT :
 
 	ECRIRE ("le PGCD est :",val2);
 
-
+FIN
 ===================================================================================================================
 ====-----------------------------------------------------------------------------------------------------------====
 ===================================================================================================================
@@ -1097,16 +1088,13 @@ DEBUT :
     
     REPETER
 
-	    ECRIRE ("Saisir un prix  : (taper 0 pour arreter de somme prix saisi) ") ;
-	    LIRE (prix) ;	
-	    
-	    SI(prix > 0) ALORS
-	    	som <-- som + prix ; 
-	    FINSI
 
-	    SI(prix < 0) ALORS
-	    	ECRIRE("un prix ne doit pas etre negatif ", prix , " n'est pas ajouter");
-	    FINSI
+			ECRIRE ("Saisir un prix  : (taper 0 pour arreter de somme prix saisit) ") ;
+			LIRE (prix) ;
+
+		    SI(prix > 0) ALORS 					
+		    	som <-- som + prix ; 
+		    FINSI
 
 	JUSQU'A ( prix = 0 );
 
@@ -1134,13 +1122,10 @@ Exercice 20 :
 	Ecrire un algorithme qui demande successivement 10 nombres à l'utilisateur, 
 	et qui affiche à la fin le plus grand de ces 10 nombres Et affiche aussi son rang dans la liste saisie
 
-
-
-
 Algo : max_liste
 
 const LIMIT 10 ;
-²
+
 Var  val , max, rang: entier;
 
 DEBUT : 
@@ -1165,7 +1150,6 @@ DEBUT :
 	
     ECRIRE ("le nombre le plus grand est  :",max );
     ECRIRE ("son rang dans la liste saisie est :",rang);
-
 FIN
 
 
@@ -1194,46 +1178,49 @@ Exercice 21 :
 
 
 
-
-
-
-
 Algo : jeu_devinette
 
 
-Var  val , cpt, test : entier;
-
+Var  val , cpt, trouve , test : entier;
+						rep : caractere;
 DEBUT : 
-	
-	ECRIRE ("Utilisateur 1 : Saisir le entier a deviner ") ;
-	LIRE (val) ;	
-	
+	trouve <--0;
 	cpt <-- 0;
-	REPETER 
+	REPETER
+		ECRIRE ("Utilisateur 1 : Saisir le entier a deviner ") ;
+		LIRE (val) ;	
+		
+		REPETER 
 
-		ECRIRE ("Utilsateur 2 : Saisir l' entier que de l'utilisateur 1 ");
-		Lire(test);
-		 
-		 cpt ++ ;
-		SI (test < val )ALORS
+			ECRIRE ("Utilsateur 2 : Saisir l' entier que de l'utilisateur 1 ");
+			Lire(test);
+			 
+			 cpt ++;
+			SI (test < val )ALORS
 
-			ECRIRE("l'entier plus grand  ");
+				ECRIRE("l'entier plus grand  ");
 
-			SINON
+				SINON
 
-				SI (test > val )ALORS
+					SI (test > val )ALORS
 
-					ECRIRE ("l'entier plus petit  ") ;
+						ECRIRE ("l'entier plus petit  ") ;
 
-					SINON 
+						SINON 
 
-						ECRIRE ("Trouvez !!! vous avez fait ", cpt," tentative ") ;
+							trouve ++ ;
 
-				FINSI
-		FINSI
+					FINSI
+			FINSI
 
-   	JUSQU'A (test = val );
+	   	JUSQU'A (test = val );
 
+	   	ECRIRE ("voulez vous continuez (o,n) !!");
+	   	LIRE(rep);
+
+	JUSQU'A(rep='n' OU rep='N');
+
+	Ecrire(" Vous avez trouvez ",trouve," sur ",cpt,"teste");
 FIN
 
 
@@ -1258,9 +1245,7 @@ Exercice 22 :
 
 
 
-
 Algo : sequence_croissante
-
 
 Var  N , i , posG,long,maxlong: entier;
 	
@@ -1288,17 +1273,17 @@ DEBUT :
    	posD <-- 1;
    	long <-- 1;
    	maxlong <-- 1;
-   													//1  2  3.  1  2  3  4  5  6  7  8 . 2  3  4  5 
+   													
    	POUR i <-- 1 a N-1 FAIRE
 
-		SI(tab[i] < tab[i+1]) ALORS           //1 inf 2   2 inf 3  	3 inf 1	  1 inf 2	  7 inf 8  8 inf 2	....
-	   		long ++ ;							//2		   3						2		  8
+		SI(tab[i] < tab[i+1]) ALORS          
+	   		long ++ ;							
 			SINON
-				SI(maxlong < long )ALORS    	//					1 inf 3						  3 inf 8	....
-					maxlong <--long ;			//					mx=3						  mx=8		....
-					posD <-- i - long +1;		//					po=3-3+1				   po=11-8+1=4	....
+				SI(maxlong < long )ALORS    	
+					maxlong <--long ;
+					posD ← i - long + 1 ;			
 				FINSI
-				long <-- 1;						//					l = 1									....
+				long <-- 1;						
 	   	FINSI
 	FINPOUR
 
@@ -1331,7 +1316,8 @@ Exercice 23.
 		Notons FN le nombre de lapins que l’on a au bout du N-ième mois. On convient que : F0 = 2. Nous avons donc F1 = 2 puis F2 = 4 et F3 = 6. Plaçons-nous au mois N + 2, nous aurons tous les couples de lapins du mois précédent (le mois N + 1) et toutes les progénitures des couples de lapins du mois N. Nous avons donc la relation : FN+2 = FN+1 + FN
 		
 		Rédiger un programme qui calcule de manière itérative le nombre de lapins au bout d’un an (le mois N = 12). 
-		 Au bout de combien de mois dépasse-t’on le milliard de lapins ?
+
+		Au bout de combien de mois dépasse-t’on le milliard de lapins ?
 
 
 
@@ -1341,29 +1327,24 @@ Algo : suite_estimation_lapin
 
 Const N = 12 , MLLD = 1000000000;
 
-Var  m, M, nbr_m,nbr_M ,FN, i , estim: entier;
+Var  m, M, FN, i , estim: entier;
 
 DEBUT : 
 	m <-- 2;						// mois 0 : nombre de bebe lapins ;
-	M <-- 0;						// mois 0 : nombre de lapin adulte ;
-	nbr_m <-- 0;			
-	nbr_M <-- 0;
+	FN <-- m;						// mois 0 : nombre de lapin adulte ;
 
 	POUR i <-- 1 a N FAIRE
 
 		SI(i = 1)ALORS
-			M <-- m;				// mois 1 : nombre de bebe lapins ;
-			m <-- 0;				// mois 1 : nombre de lapins adultes;
-
-			SINON
-				nbr_m <-- nbr_m + m;	// determine le nombre de bebe lapins 
-				nbr_M <-- nbr_M + M;	// determine le nombre de lapins Adultes
+			M <-- 2;				// mois 1 : nombre de bebe lapins ;
+			FN <-- M;				// mois 1 : nombre de lapins adultes;
+			SINON																
 				
-				FN <-- nbr_M + nbr_m;	// determine le nombre de lapins
+				FN <-- M + m;		// determine le nombre de lapins		
 
-				nbr_m <-- nbr_m ;			// stockage de nombre de bebe lapins a venir au mois prochain
+				m <-- M ;			// stockage de nombre de bebe lapins a venir au mois prochain
 
-				nbr_M <-- FN ;				// stockage de nombre d'adulte lapins a venir au mois prochain
+				M <-- FN ;			// stockage de nombre d'adulte lapins a venir au mois prochain
 		FIN
 		
 	FINPOUR
@@ -1372,15 +1353,15 @@ DEBUT :
 
 	// estimation avec regle des trois  en tenant compte du mots "depasse"
 
-	SI((MLLD * N) mod FN = 0)ALORS 
-		estime <-- ((MLLD * N) div FN) + 1;	 
-
-		SINON
-			estime <-- (MLLD * N) div FN ;
-	FINSI
-
-	ECRIRE("le nombre de depasse ",MLLD," au bout de ",estime," mois");
-
+	TANTQUE(FN <= MLLD) FAIRE
+		N++;					// etant le nombre de mois
+		FN = M + m;					
+		m = M ;		
+		M = FN ;
+	FINTANTQUE
+		
+	ECRIRE("le nombre de depasse " + MLLD + " au bout de " + N +" mois");
+		
 
 FIN
 
@@ -1391,7 +1372,10 @@ FIN
 
 
 
-Exercice 24: Nombre secret : écrire un programme qui demande à l’utilisateur 1 d’entrer un nombre et à l’utilisateur 2 de le trouver en affichant, à chaque tentative, « trop grand » si le nombre entré est plus grand que le nombre secret, « trop petit » sinon. Le programme s’arrête quand l’utilisateur 2 a trouvé le nombre secret.
+Exercice 24: 
+Nombre secret : écrire un programme qui demande à l’utilisateur 1 d’entrer un nombre et à l’utilisateur 2 de 
+le trouver en affichant, à chaque tentative, « trop grand » si le nombre entré est plus grand que le nombre secret,
+ « trop petit » sinon. Le programme s’arrête quand l’utilisateur 2 a trouvé le nombre secret.
 
 
 
@@ -1463,9 +1447,9 @@ Ecrire un programme qui saisit un nombre et qui dit si ce nombre est premier ou 
 
 Algo : affichage_triange_val
 
-Const LIMIT 10
-Var  val , j, i : entier;
+Const LIMIT 10;
 
+Var  val , j, i : entier;
 
 DEBUT : 
 	
@@ -1540,7 +1524,7 @@ Exercice 26 : 	Faire un programme qui saisit une suite de nombre et qui dit les
 
 Algo : croissant
 
-Var  nbr , cpt, i ,n, ordre : entier;
+Var  nbr , i ,n, ordre , precedent : entier;
 
 
 DEBUT : 
@@ -1554,10 +1538,10 @@ DEBUT :
     JUSQU'A (n > 1);
 
 	POUR i <-- 1 a n FAIRE 
-		REPETER
-			ECRIRE ("Saisir un nombre entier naturel ") ;
-	        LIRE (val) ;		
-	    JUSQU'A(val > 0 );
+		
+		ECRIRE ("Saisir un nombre entier  ") ;
+        LIRE (val) ;		
+	    
        
         SI (i > 1 ) ALORS
         	SI( precedent < val ET ordre = 0 OU ordre = 1) ALORS
