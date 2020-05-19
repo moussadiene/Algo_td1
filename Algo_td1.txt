@@ -18,12 +18,12 @@ Var nb1, nb2, rest,qentier : entier ;
 DEBUT : 
  	
 	REPETER
-		Ecrire("Saisir le premier nombre entier :") ;
+		Ecrire("Saisir le premier nombre entier naturel :") ;
  		Lire(nb1) ;
 	JUSQU’A (nb1>0) ;
 
 	REPETER
-		Ecrire("Saisir les 2ieme nombre entier :") ;
+		Ecrire("Saisir les 2ieme nombre entier naturel :") ;
  		Lire( nb2) ;
 	JUSQU’A (nb2>0) ;
 	
@@ -33,7 +33,7 @@ DEBUT :
 
 	rest ⇐ nb1 mod nb2 ;
 
-		Ecrire("le quotient  entier est  :",q)entier ;
+		Ecrire("le quotient  entier est  :",qentier ;
 
 		Ecrire("le quotient  entier est  :",qreel) ;
 
@@ -85,7 +85,7 @@ DEBUT :
 
 	pi ⇐  4 * atan(1) ;
 	
-	surf ⇐ sqr(r) * pi ;
+	surf ⇐ pow(r , 2) * pi ;
 	
 	peri ⇐ 2 * pi * r ;
 	
@@ -397,11 +397,11 @@ DEBUT :
 	montant ←  montant mod 1 ;
 
 	ECRIRE("Apres décomposition de :  ",montant,"euro on a ")
-	ECRIRE(nb2, "de billets de 20 ") ;
-	ECRIRE(nb2, "de billets de 10 ") ;
-	ECRIRE(nb2, "de billets de 5 ") ;
+	ECRIRE(nb20, "de billets de 20 ") ;
+	ECRIRE(nb10, "de billets de 10 ") ;
+	ECRIRE(nb5, "de billets de 5 ") ;
 	ECRIRE(nb2, "de piece de 2 ") ;
-	ECRIRE(nb2, "de piece de 1 ") ;
+	ECRIRE(nb1, "de piece de 1 ") ;
 FIN
 	
 
@@ -429,9 +429,10 @@ Algo : equation
 Var a , b , c , x1 , x2, delta : reel;
 
 DEBUT : 
- 	
-	ECRIRE ("saisir A de x2") ;
-	LIRE (a) ;		
+ 	REPETER
+		ECRIRE ("saisir A de x2") ;
+		LIRE (a) ;		
+	JUSQU’A(a !=0);
 	ECRIRE ("saisir B de x") ;
 	LIRE (b) ;	
 	ECRIRE ("saisir C ") ;
@@ -566,43 +567,45 @@ Algo : trie_par_echange_successif
 			ECRIRE ("saisir 3 nombres entiers") ;
 			LIRE (a,b,c) ;		
 			 // les possibilites que a soit plus grand
-				SI(a > b ET b > c)Alors
-					svg ←  0;
-					
-				FINSI
-				Si(a > c ET c > b) alors
-					svg ←  b;
-					b ←  c;
-					c ←  svg;
-				FINSI
-				// les possibilités que b soit plus grand
-				Si(b > a ET a > c) alors
-					svg ← a;
-					a ← b;
-					b ← svg;
-				FINSI
-				Si(b > c ET c > a) alors
-					svg ← b;
-					b ← c;
-					c ← a;
-					a ← svg ;
-				FINSI
-				
-				// possibilités de  que c soit plus grand
-				Si(c > a ET a > b) alors
-					svg ← c;
-					c ← b;
-					b ← a;
-					a ← svg;
-				FINSI
-				Si(c > b ET b > a) alors
-					svg ← c;
-					c ← a;
-					a ← svg;
-				FINSI
+
+		SI(a < b ET b < c) ALORS
+			svg  ←  0;
+		FINSI
+
+		SI(a < c ET c < b) ALORS
+			svg  ←   b;
+			b  ←   c;
+			c  ←   svg;
+		FINSI
+		// les possibilités que b soit plus grand
+		SI(b < a ET a < c) ALORS
+			svg  ←  b;
+			b  ←  a;
+			a  ←  svg;
+		FINSI
+		SI(b < c ET c < a) ALORS
+			svg  ←  a;
+			a  ←  b;
+			b  ←  c;
+			c  ←  svg;
+		FINSI
+		
+		// possibilités de  que c soit plus grand
+		SI(c < a ET a < b) ALORS
+			svg  ←  b;
+			b  ←  a;
+			a  ←  c;
+			c  ←  svg;
+		FINSI
+		SI(c < b ET b < a)ALORS
+			svg  ←  a;
+			a  ←  c;
+			c  ←  svg;	
+		FINSI
+			
 				ECRIRE ("affichage dans l'ordre croissant:") ;
 				ECRIRE (a, " ",b," ",c) ;			
-		FIN
+	FIN
 
 
 
@@ -656,14 +659,13 @@ DEBUT :
 	
 	SI (operateur = '/' ET b!=0) ALORS
 		result ←  a / b ;
+		SINON
+			ECRIRE (" le denominateur doit différents de 0");
+			result ← 0;
 	FINSI
 	
 	ECRIRE (" le resultat est : ",result);
 FIN
-
-
-
-
 
 
 
@@ -675,13 +677,9 @@ FIN
 
 
 
-
-
-
-
-
 Exercice 12 : Un nombre est parfait s’il est égal à la somme de ses diviseurs stricts (différents de lui-même). 
-Ainsi par exemple, l’entier 6 est parfait car 6 = 1 + 2 + 3. Écrire un algorithme permettant de déterminer si un entier naturel est un nombre parfait.
+				Ainsi par exemple, l’entier 6 est parfait car 6 = 1 + 2 + 3. 
+				Écrire un algorithme permettant de déterminer si un entier naturel est un nombre parfait.
 
 Algo : parfait 
 
@@ -696,9 +694,9 @@ DEBUT :
 		LIRE (nbr) ;		
 	JUSQU'A( nbr ) ;
 	 
-	POUR i allant de 1 a nbr-1 FAIRE
+	POUR i allant de 1 a nbr div 2 FAIRE
 		SI (nb % i == 0)ALORS
-			som ←	 som + i;
+			som ← som + i;
 		FINSI
 	FINPOUR
 	
@@ -711,47 +709,21 @@ FIN
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ===================================================================================================================
 ====-----------------------------------------------------------------------------------------------------------====
 ===================================================================================================================
 
 
 
-
-
-
 Exercice 13 : 
 	Faire un programme qui saisit une date (jour, mois et année) at qui indique si la date est valide
-
     /** 
         diviser les mois en deux parties:
             1. du 1 au 7ieme mois, les mois impaire compte 31 jours au max
                 et les mois paires comptent 30 jours chauffe fevrier qui 29 jours max
             
 			2. et d 8 au 12ieme mois, les mois impaire compte 30 jours max
-                et les mois paires comptent 31 jours au max
-				
+                et les mois paires comptent 31 jours au max	
     **/
 Algo : Valid_date 
 
@@ -770,12 +742,12 @@ DEBUT :
 
 		SINON 
 		SI(mm >= 7) ALORS
-			SI(mm mod 2 = 0 ET jj = 31);
+			SI(mm mod 2 = 0 ET jj = 31)
 				
                 ECRIRE ("invalide, ce mois ne compte pas 31 jours");
 					
                 SINON	
-                SI(mm = 2 ET jj = 29 ET (an mod 4 != 0 ou an mod 100!=0) ALORS             
+                SI(mm = 2 ET jj = 29 ET (an mod 4 != 0 ou an mod 100==0) ALORS             
 						
 					ECRIRE ("invalide, le mois de fevrier de cette annee compte 28 jours");
 
@@ -784,15 +756,15 @@ DEBUT :
 
 				FINSI
 			FINSI
-
-			SI(mm mod 2 = 1 ET jj = 31)
-				
-                ECRIRE ("invalide, ce mois compte 30 jours");
-                    
-				SINON
-					ECRIRE (jj,"-",mm,"-",an," est valide");	
+			SINON
+				SI(mm mod 2 = 1 ET jj = 31)
+					
+					ECRIRE ("invalide, ce mois compte 30 jours");
+						
+					SINON
+						ECRIRE (jj,"-",mm,"-",an," est valide");	
+				FINSI
 			FINSI
-		FINSI
 	FINSI
 
 
@@ -897,8 +869,8 @@ Exercice 15 :
 
 Algo : moyenne 
 
-Var  i , som : entier;
-    nbr , moy : reel;
+Var  i , nbr , som : entier;
+     moy : reel;
 
 DEBUT : 
     REPETER
@@ -943,7 +915,7 @@ Exercice 16 :
 
 Algo : soustractions_successive 
 
-Var  a , b, result,reste : entier;
+Var  a , b, result : entier;
     
 DEBUT : 
     REPETER
@@ -957,20 +929,19 @@ DEBUT :
 	JUSQU'A (b > 0 );
 
     
-    result <-- 0;
+    cpt <-- 0;
     
-    reste <-- a;
-    TANTQUE ( b <= reste ) ALORS
+    TANTQUE ( b <= a ) ALORS
             
-            reste <-- reste - b;
+            a <-- a - b;
 
-            result ++;
+            cpt ++;
 
     FINTANTQUE        
 
    
-    ECRIRE ("le resultat de la division entier est ",result);
-    ECRIRE ("le reste de la division entier est ",reste);
+    ECRIRE ("le resultat de la division entier est ",cpt);
+    ECRIRE ("le reste de la division entier est ",a);
 
 FIN 
 
@@ -1092,8 +1063,10 @@ DEBUT :
 			ECRIRE ("Saisir un prix  : (taper 0 pour arreter de somme prix saisit) ") ;
 			LIRE (prix) ;
 
-		    SI(prix > 0) ALORS 					
+		    SI(prix => 0) ALORS 					
 		    	som <-- som + prix ; 
+				sinon
+					ECRIRE("le prix ne doit pas etre negatif");
 		    FINSI
 
 	JUSQU'A ( prix = 0 );
@@ -1181,12 +1154,12 @@ Exercice 21 :
 Algo : jeu_devinette
 
 
-Var  val , cpt, trouve , test : entier;
-						rep : caractere;
+Var  val , cpt,  test : entier;
+					
 DEBUT : 
-	trouve <--0;
+	
 	cpt <-- 0;
-	REPETER
+	
 		ECRIRE ("Utilisateur 1 : Saisir le entier a deviner ") ;
 		LIRE (val) ;	
 		
@@ -1208,19 +1181,14 @@ DEBUT :
 
 						SINON 
 
-							trouve ++ ;
+							ECRIRE("Vous avez trouvez le valeur mistere apres "+cpt+" tentatives !!")
 
 					FINSI
 			FINSI
 
 	   	JUSQU'A (test = val );
 
-	   	ECRIRE ("voulez vous continuez (o,n) !!");
-	   	LIRE(rep);
 
-	JUSQU'A(rep='n' OU rep='N');
-
-	Ecrire(" Vous avez trouvez ",trouve," sur ",cpt,"teste");
 FIN
 
 
@@ -1287,7 +1255,7 @@ DEBUT :
 	   	FINSI
 	FINPOUR
 
-	POUR i <-- posD a maxlong FAIRE
+	POUR i <-- posD a (maxlong+posD) FAIRE
 
 		ECRIRE(tab[i]," * ");
 		
@@ -1544,11 +1512,11 @@ DEBUT :
 	    
        
         SI (i > 1 ) ALORS
-        	SI( precedent < val ET ordre = 0 OU ordre = 1) ALORS
+        	SI( precedent < val ET ordre != 2 OU ordre != 3) ALORS
         		ordre <-- 1;
 
         		SINON
-        			SI( precedent > val ET ordre = 0 OU ordre = 2) ALORS
+        			SI( precedent > val ET ordre !=1  OU ordre != 3) ALORS
 		        		ordre <-- 2;
 
 		        		SINON
