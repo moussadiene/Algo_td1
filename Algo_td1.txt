@@ -532,7 +532,7 @@ b. On suppose que la durée de vol est inférieure à 24 heures mais peut avoir 
 			duree ← ma-md;
 			
 			d_h ← duree div 60 ; 
-			
+		
 			d_mn ← duree mod 60 ; 
 			
 		ECRIRE("la duree du vol en heure et minute est : ",d_h,":",d_mn);
@@ -717,14 +717,14 @@ FIN
 
 Exercice 13 : 
 	Faire un programme qui saisit une date (jour, mois et année) at qui indique si la date est valide
-    /** 
+     
         diviser les mois en deux parties:
             1. du 1 au 7ieme mois, les mois impaire compte 31 jours au max
                 et les mois paires comptent 30 jours chauffe fevrier qui 29 jours max
             
 			2. et d 8 au 12ieme mois, les mois impaire compte 30 jours max
                 et les mois paires comptent 31 jours au max	
-    **/
+    
 Algo : Valid_date 
 
 Var jj , mm , an : entier;
@@ -1042,8 +1042,8 @@ FIN
 
 
 Exercice 19 : 
-	Ecrire l’algorithme qui affiche la somme des prix d'une suite d'articles en CFA (entiers)
-	saisies par l'utilisateur et se terminant par zéro.
+Ecrire l’algorithme qui affiche la somme des prix d'une suite d'articles en CFA (entiers)
+saisies par l'utilisateur et se terminant par zéro.
 
 
 
