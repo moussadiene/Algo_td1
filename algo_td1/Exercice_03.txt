@@ -1,0 +1,87 @@
+
+===================================================================================================================
+====-----------------------------------------------------------------------------------------------------------====
+===================================================================================================================
+
+
+
+exercice 3:
+	Version 1 :
+		Faire un programme qui saisit 3 résistances : R1, R2 et R3.
+		Calculer et afficher la résistance en série : R1 + R2 +R3
+		Calculer et afficher la résistance en parallèle : (R1 * R2 * R3) / (R1*R2 + R2*R3 + R1*R3)
+
+Algo : resistance_version1
+
+Var r1, r2, r3 , r_serie , r_para : reel ;
+	choix : entier ;
+DEBUT : 
+ 	
+	REPETER
+		Ecrire("Saisir le resistance R1 :") ;
+ 		Lire(r1) ;
+	JUSQU’A (r1>0) ;
+
+	REPETER
+		Ecrire("Saisir le resistance R2 :") ;
+ 		Lire(r2) ;
+	JUSQU’A (r2>0) ;
+
+	REPETER
+		Ecrire("Saisir le resistance R3 :") ;
+ 		Lire(r3) ;
+	JUSQU’A (r3>0) ;
+	
+	r_serie ⇐ r1 + r2 + r3 ;
+
+	r_para ⇐   (r1 * r2 * r3) / (r1*r2 + r2*r3 + r1*r3)
+
+	Ecrire("la resistance en serie  est  :" , r_serie) ;
+	Ecrire("le registance en paralelle est  :" , r_para) ;
+FIN
+
+
+
+
+
+
+Version 2 :
+		Demander a l’utilisateur d’indiquer son choix.
+		S’il entre la valeur  1, calculer et afficher la fréquence en série.
+		S’il entre la valeur 2, calculer et afficher la fréquence en parallèle.
+
+
+Algo : resistance_version2
+
+Var r1, r2, r3 , r_serie, r_para : réel ;
+	choix : entier ;
+DEBUT : 
+	REPETER 
+ 		Ecrire("1 - frequence en serie    :" ) ;
+		Ecrire("2 - frequence en paralelle ") ;
+		Ecrire(" Faite votre choix !!! ") ;
+	JUSQU’A (choix>0 ET choix <3) ;
+	
+	REPETER
+		Ecrire("Saisir le resistance R1 :") ;
+ 		Lire(r1) ;
+	JUSQU’A (r1>0) ;
+
+	REPETER
+		Ecrire("Saisir le resistance R2 :") ;
+ 		Lire(r2) ;
+	JUSQU’A (r2>0) ;
+
+	REPETER
+		Ecrire("Saisir le resistance R3 :") ;
+ 		Lire(r3) ;
+	JUSQU’A (r3>0) ;
+	suivant (choix ) faire
+		option 1 :  
+			f_serie ⇐ (r1 + r2 + r3) / r_serie ;
+			Afficher("la resistance en serie  est  :" , f_serie) ;
+		option 2 :
+			r_para = (r1 + r2 + r3) / r_para ;
+			Afficher("le registance en paralelle est  :" , r_para) ;
+	finsuivant
+FIN

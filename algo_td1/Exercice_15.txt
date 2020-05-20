@@ -1,0 +1,51 @@
+
+============================================================================================================
+====----------------------------------------------------------------------------------------------------====
+============================================================================================================
+
+
+
+
+
+
+Exercice 15 :
+ Ecrire un algorithme qui demande un nombre de départ, et qui calcule la somme des entiers jusqu'à ce nombre. 
+ Par exemple si l'on tape 4 , l’algorithme doit calculer: 1 + 2 + 3+ 4 = 10 
+ Réécrire l'algorithme qui calcule cette fois la moyenne !
+
+
+Algo : moyenne 
+
+Var  i , nbr , som : entier;
+     moy : reel;
+
+DEBUT : 
+    REPETER
+        ECRIRE ("Saisir un entier naturel :") ;
+        LIRE (nbr) ;		
+	JUSQU'A (nbr > 0 )
+    
+    som <-- 0;
+    POUR i <-- 1 a nbr FAIRE
+        som = som + i;
+    FINPOUR
+    
+    // partie 1 
+
+    ECRIRE ("la somme des entiers compris entier naturel 1 et ",nbr," est ",som);
+
+    // partie 1 
+
+    moy = som / nbr;
+
+    ECRIRE ("la moyenne est ",moy);
+    
+  
+FIN
+
+
+
+=================================================================
+====---------------------------------------------------------====
+=================================================================
+

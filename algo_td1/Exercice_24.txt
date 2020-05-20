@@ -1,0 +1,61 @@
+===================================================================================================================
+====-----------------------------------------------------------------------------------------------------------====
+===================================================================================================================
+
+
+
+Exercice 24: 
+Nombre secret : écrire un programme qui demande à l’utilisateur 1 d’entrer un nombre et à l’utilisateur 2 de 
+le trouver en affichant, à chaque tentative, « trop grand » si le nombre entré est plus grand que le nombre secret,
+ « trop petit » sinon. Le programme s’arrête quand l’utilisateur 2 a trouvé le nombre secret.
+
+
+
+
+
+
+
+Algo : jeu_devinette
+
+
+Var  val , test : entier;
+
+DEBUT : 
+	
+	ECRIRE ("Utilisateur 1 : Saisir le nombre secret ") ;
+	LIRE (val) ;	
+	
+	REPETER 
+
+		ECRIRE ("Utilsateur 2 : deviner le nombre secret ");
+		Lire(test);
+		 
+		SI (test < val )ALORS
+			ECRIRE(" trop petit ");
+
+			SINON SI (test > val )ALORS
+					ECRIRE (" trop grand ") ;
+
+					SINON
+						ECRIRE(" nombre secret trouvé");
+				FINSI
+		FINSI
+
+   	JUSQU'A (test = val );
+
+
+FIN
+
+
+
+
+
+
+
+
+
+===================================================================================================================
+====-----------------------------------------------------------------------------------------------------------====
+===================================================================================================================
+
+

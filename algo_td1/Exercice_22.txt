@@ -1,0 +1,77 @@
+
+===================================================================================================================
+====-----------------------------------------------------------------------------------------------------------====
+===================================================================================================================
+
+
+
+
+Exercice 22 : 
+		On se propose de saisir N entiers différents entre 1 et 100 (N étant un entier naturel compris entre 10 et 50) puis afficher la plus longue séquence croissante tout en précisant la position du premier nombre de cette séquence.
+			Exemple : Pour N=15
+ 								1  2  3.  1  2  3  4  5  6  7  8 . 2  3  4  5 
+		Le programme affiche :
+		La plus longue séquence est 1 * 2 * 3 * 4 * 5 * 6 * 7 * 8 *   qui débute à la position 4  et elle est de longueur 7
+
+
+
+
+
+Algo : sequence_croissante
+
+Var  N , i , posG,long,maxlong: entier;
+	
+	tab TABLEAU[1..50] : entier ;
+DEBUT : 	
+	
+	
+	REPETER 
+		ECRIRE ("Saisir un entier naturel ") ;
+		LIRE (N) ;
+   	JUSQU'A (N >= 1 ET N <= 50);
+
+
+   	POUR i <-- 1 a N FAIRE
+
+   		REPETER 
+			ECRIRE ("Saisir un entier naturel ") ;
+			LIRE (tab[i]) ;
+	   	JUSQU'A (tab[i] >= 1 ET tab[i] <= 100);
+	   	
+   	FINPOUR 
+
+   	   
+
+   	posD <-- 1;
+   	long <-- 1;
+   	maxlong <-- 1;
+   													
+   	POUR i <-- 1 a N-1 FAIRE
+
+		SI(tab[i] < tab[i+1]) ALORS          
+	   		long ++ ;							
+			SINON
+				SI(maxlong < long )ALORS    	
+					maxlong <--long ;
+					posD ← i - long + 1 ;			
+				FINSI
+				long <-- 1;						
+	   	FINSI
+	FINPOUR
+
+	POUR i <-- posD a (maxlong+posD) FAIRE
+
+		ECRIRE(tab[i]," * ");
+		
+	FINPOUR
+
+	ECRIRE(" débute à la position ",posD," et elle est de longueur ",maxlong);
+FIN
+
+
+
+===================================================================================================================
+====-----------------------------------------------------------------------------------------------------------====
+===================================================================================================================
+
+

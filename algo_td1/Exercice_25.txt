@@ -1,0 +1,90 @@
+
+===================================================================================================================
+====-----------------------------------------------------------------------------------------------------------====
+===================================================================================================================
+
+
+
+
+
+
+
+
+
+Exercice 25 : Ecrire le code C du programme qui affiche le texte suivant pour les chiffres de 1 à 10 :
+1 
+2 2 
+3 3 3
+Ecrire un programme qui saisit un nombre et qui dit si ce nombre est premier ou pas.
+
+
+
+
+// partie 1 :
+
+Algo : affichage_triange_val
+
+Const LIMIT 10;
+
+Var  val , j, i : entier;
+
+DEBUT : 
+	
+	POUR i <-- 1 a LIMIT FAIRE 
+
+		POUR j <-- 1 a i FAIRE 
+
+			ECRIRE(i);
+
+		FINPOUR
+
+	FINPOUR
+
+FIN
+
+//partie 2
+
+
+
+Algo : premier
+
+Const LIMIT 10 ;
+
+Var  val , cpt, i : entier;
+
+
+DEBUT : 
+	
+	  REPETER
+        ECRIRE ("Saisir un nombre entier naturel ") ;
+        LIRE (val) ;		
+	JUSQU'A (val1 > 0);
+
+	cpt <-- 0 ; 
+	POUR i <-- 1 a val FAIRE 
+
+		SI(val mod i = 0 ) ALORS
+
+			cpt++ ;
+
+		FINSI
+
+	FINPOUR
+
+	SI (cpt = 2) ALORS
+
+		ECRIRE (val, "est un nombre premier");
+		SINON
+			ECRIRE(val,"n'est pas un nombre premier");
+	FINSI
+
+FIN
+
+
+
+
+
+
+===================================================================================================================
+====-----------------------------------------------------------------------------------------------------------====
+===================================================================================================================

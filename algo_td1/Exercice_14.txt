@@ -1,0 +1,84 @@
+
+===================================================================================================================
+====-----------------------------------------------------------------------------------------------------------====
+===================================================================================================================
+
+
+
+
+
+
+Exercice 14 : 
+	Faire un programme qui saisit une date (jour, mois et année) at qui indique si l’année est bissextile 
+
+Algo : bissextile 
+
+Var jj , mm , an : entier;
+			valid : booleen;
+DEBUT : 
+
+	ECRIRE ("Saisir le jour, le mois et l'année ") ;
+	LIRE (jj,mm,an) ;		
+	
+
+	SI (jj > 31 OU jj < 1 OU mm > 12 OU mm <1 OU an < 1000 OU an > 2020) ALORS
+		valid <-- faux ;
+
+		SINON 
+		SI(mm >= 7) ALORS
+			SI(mm mod 2 = 0 ET jj = 31);
+                valid <-- faux ;
+					
+                SINON	
+                SI(mm = 2 ET jj = 29 ET (an mod 4 != 0 ou an mod 100!=0) ALORS             
+					valid <-- faux ;
+
+					SINON
+						valid <-- vrai;
+
+				FINSI
+			FINSI
+
+			SI(mm mod 2 = 1 ET jj = 31)
+                valid <-- faux;
+                    
+				SINON
+					valid <-- vrai;	
+			FINSI
+		FINSI
+	FINSI
+
+	SI (valid = vrai) ALORS
+
+		SI (an mod 4 = 0 ET an mod 100 != 0) ALORS
+
+			ECRIRE ("l'annee :",an," est bissextile");
+			SINON	
+				ECRIRE ("l'annee :",an," n'est pas bissextile");
+		FINSI
+
+		SINON
+			ECRIRE (jj,"/",mm,"/",an," n'est pas valide");
+	FINSI
+
+	
+	
+FIN
+
+
+
+
+
+
+
+
+
+
+
+============================================================================================================
+====----------------------------------------------------------------------------------------------------====
+============================================================================================================
+
+
+
+

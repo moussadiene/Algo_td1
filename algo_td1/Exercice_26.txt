@@ -1,0 +1,71 @@
+
+===================================================================================================================
+====-----------------------------------------------------------------------------------------------------------====
+===================================================================================================================
+
+
+
+Exercice 26 : 	Faire un programme qui saisit une suite de nombre et qui dit les si les nombres saisis sont 
+				dans l’ordre croissant ou décroissant ou quelconque.
+
+
+Algo : croissant
+
+Var  nbr , i ,n, ordre , precedent : entier;
+
+
+DEBUT : 
+	
+	ordre <-- 0;
+	
+
+	REPETER
+		ECRIRE ("Donner le nombre d'elements a saisir ") ;
+        LIRE (n) ;
+    JUSQU'A (n > 1);
+
+	POUR i <-- 1 a n FAIRE 
+		
+		ECRIRE ("Saisir un nombre entier  ") ;
+        LIRE (val) ;		
+	    
+       
+        SI (i > 1 ) ALORS
+        	SI( precedent < val ET ordre != 2 OU ordre != 3) ALORS
+        		ordre <-- 1;
+
+        		SINON
+        			SI( precedent > val ET ordre !=1  OU ordre != 3) ALORS
+		        		ordre <-- 2;
+
+		        		SINON
+		        			ordre <-- 3;
+		        	FINSI
+        	FINSI
+
+		FINSI
+		   
+ 		precedent <-- val;
+	FINPOUR
+
+	SI(ordre = 1)ALORS
+		ECRIRE("la saisie est dans l'ordre croissant ");
+		
+		SINON SI (ordre = 2 )ALORS
+				ECRIRE("la saisie est dans l'ordre decroissant ");
+
+				SINON 
+					ECRIRE("la saisie est quelconque");
+
+			FINSI
+
+	FINSI	
+
+FIN
+
+
+===================================================================================================================
+====-----------------------------------------------------------------------------------------------------------====
+===================================================================================================================
+
+

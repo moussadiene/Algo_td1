@@ -24,9 +24,7 @@ public class Exercice_21 {
 
 	public static void main(String[] args) {
 		sc = new Scanner(System.in);
-		
-		
-		
+
 		System.out.println("------------	Jeu et Score ----------------- \n");
 		System.out.println("Joueur 1: Donner la valeur mistere ::");
 		

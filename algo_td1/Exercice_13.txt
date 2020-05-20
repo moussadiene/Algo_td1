@@ -1,0 +1,69 @@
+
+
+===================================================================================================================
+====-----------------------------------------------------------------------------------------------------------====
+===================================================================================================================
+
+
+
+Exercice 13 : 
+	Faire un programme qui saisit une date (jour, mois et année) at qui indique si la date est valide
+     
+        diviser les mois en deux parties:
+            1. du 1 au 7ieme mois, les mois impaire compte 31 jours au max
+                et les mois paires comptent 30 jours chauffe fevrier qui 29 jours max
+            
+			2. et d 8 au 12ieme mois, les mois impaire compte 30 jours max
+                et les mois paires comptent 31 jours au max	
+    
+Algo : Valid_date 
+
+Var jj , mm , an : entier;
+	
+
+DEBUT : 
+ 	
+	ECRIRE ("Saisir le jour, le mois et l'année ") ;
+	LIRE (jj,mm,an) ;		
+	
+
+	SI (jj > 31 OU jj < 1 OU mm > 12 OU mm <1 OU an < 1000 OU an > 2020) ALORS
+
+		ECRIRE (jj,"/",mm,"/",an," est invalid");
+
+		SINON 
+		SI(mm >= 7) ALORS
+			SI(mm mod 2 = 0 ET jj = 31)
+				
+                ECRIRE ("invalide, ce mois ne compte pas 31 jours");
+					
+                SINON	
+                SI(mm = 2 ET jj = 29 ET (an mod 4 != 0 ou an mod 100==0) ALORS             
+						
+					ECRIRE ("invalide, le mois de fevrier de cette annee compte 28 jours");
+
+					SINON
+						ECRIRE (jj,"-",mm,"-",an," est valide");
+
+				FINSI
+			FINSI
+			SINON
+				SI(mm mod 2 = 1 ET jj = 31)
+					
+					ECRIRE ("invalide, ce mois compte 30 jours");
+						
+					SINON
+						ECRIRE (jj,"-",mm,"-",an," est valide");	
+				FINSI
+			FINSI
+	FINSI
+
+
+FIN
+
+
+===================================================================================================================
+====-----------------------------------------------------------------------------------------------------------====
+===================================================================================================================
+
+

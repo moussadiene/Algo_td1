@@ -1,0 +1,80 @@
+
+===================================================================================================================
+====-----------------------------------------------------------------------------------------------------------====
+===================================================================================================================
+
+
+
+
+
+
+
+
+Exercice 9 : 
+Ecrire un algorithme qui donne la durée de vol en heure minute connaissant l'heure de départ et l'heure d'arrivée. 
+a. On considère que le départ et l'arrivé ont lieu le même jour 
+b. On suppose que la durée de vol est inférieure à 24 heures mais peut avoir lieu le lendemain. 
+
+	Algo : duree_version_2
+		Var  duree ,hd , md ,ha,ma , jour_en_minute, d_mn , d_h: entier;
+		DEBUT : 
+			
+		 	REPETER 
+				ECRIRE ("Saisir l'heure de depart et les minutes") ;
+				LIRE (hd,md) ;		
+			JUSQU’A ( hd >= 0 ET  hd < 24  ET  md >= 0   ET md < 60 ) ;
+			
+			
+			
+			REPETER 
+				ECRIRE ("Saisir l'heure de arrive  et les minutes") ;
+				LIRE (ha,ma) ;		
+			JUSQU’A ( ha >= 0 ma >= 0 ET  ha < 24  ET ma < 60) ;
+			
+			
+			//conversion heure depart en minutes
+				
+				md ← md + (hd*60);    
+			
+
+			//conversion heure arrive en minutes
+			
+				ma ← ma + (ha*60);  
+ 
+
+
+			//version 2 :
+			
+				//si la durée ai lieu le lendemain
+			
+				SI (ma < md )ALORS
+					
+					//conversion de 24h en minute
+					
+					jour_en_minute ← 24 * 60 ;	
+					
+					ma ← ma + jour_en_minute ;  	
+			
+				FINSI
+		
+			
+			duree ← ma-md;
+			
+			d_h ← duree div 60 ; 
+		
+			d_mn ← duree mod 60 ; 
+			
+		ECRIRE("la duree du vol en heure et minute est : ",d_h,":",d_mn);
+		
+FIN
+
+
+
+
+
+
+
+===================================================================================================================
+====-----------------------------------------------------------------------------------------------------------====
+===================================================================================================================
+

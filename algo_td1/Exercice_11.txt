@@ -1,0 +1,63 @@
+
+
+===================================================================================================================
+====-----------------------------------------------------------------------------------------------------------====
+===================================================================================================================
+
+
+
+
+
+
+
+Exercice 11 : Ecrire un algorithme calculatrice permettant la saisie du premier entier (a) de l'opération 
+				( + ou – ou * ou / : sont des caractères) et du deuxième entier (b) et qui affiche le résultat.
+
+Algo : operation 
+
+Var a , b : entier;
+	op : caractere;
+	result : reel;
+	
+
+DEBUT : 
+ 	
+	
+	ECRIRE ("saisir le premier nombre") ;
+	LIRE (a) ;		
+	ECRIRE ("saisir le deuxieme nombre") ;
+	LIRE (b) ;	
+	
+	REPETER
+		ECRIRE ("saisir l'operateur ( - ou + ou * ou / ) ") ;
+		LIRE (op) ;	
+	JUSQU’A( op = '-' OU op = '+' OU op = '*' OU op = '/') ;
+	
+	SI (operateur = '-' ) ALORS
+		result ←  a - b ;
+	FINSI
+	
+	SI (operateur = '+' ) ALORS
+		result ←  a + b ;
+	FINSI
+	SI (operateur = '*' ) ALORS
+		result ←  a * b ;
+	FINSI
+	
+	SI (operateur = '/' ET b!=0) ALORS
+		result ←  a / b ;
+		SINON
+			ECRIRE (" le denominateur doit différents de 0");
+			result ← 0;
+	FINSI
+	
+	ECRIRE (" le resultat est : ",result);
+FIN
+
+
+
+
+===================================================================================================================
+====-----------------------------------------------------------------------------------------------------------====
+===================================================================================================================
+

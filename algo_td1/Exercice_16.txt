@@ -1,0 +1,60 @@
+
+
+=================================================================
+====---------------------------------------------------------====
+=================================================================
+
+
+
+
+
+
+
+
+
+Exercice 16 : 
+			Faire un programme qui calcule et affiche la division de a par b par soustractions successives
+
+Algo : soustractions_successive 
+
+Var  a , b, result : entier;
+    
+DEBUT : 
+    REPETER
+        ECRIRE ("Saisir la valeur du dividant :") ;
+        LIRE (a) ;		
+	JUSQU'A (a > 0 );
+
+    REPETER
+        ECRIRE ("Saisir la valeur de diviseur:") ;
+        LIRE (b) ;		
+	JUSQU'A (b > 0 );
+
+    
+    cpt <-- 0;
+    
+    TANTQUE ( b <= a ) ALORS
+            
+            a <-- a - b;
+
+            cpt ++;
+
+    FINTANTQUE        
+
+   
+    ECRIRE ("le resultat de la division entier est ",cpt);
+    ECRIRE ("le reste de la division entier est ",a);
+
+FIN 
+
+
+
+
+
+
+===================================================================================================================
+====-----------------------------------------------------------------------------------------------------------====
+===================================================================================================================
+
+
+

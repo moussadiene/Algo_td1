@@ -27,6 +27,7 @@ public class Exercice_24 {
 		
 		
 		System.out.println("------------ Trouver le nombre devinette et score----------------- \n");
+		
 		System.out.println("Utilisateur 1: Donner la valeur mistere ::");
 		
 		int val = sc.nextInt();

@@ -12,7 +12,6 @@ Exercice 22 :
 		Le programme affiche :
 		La plus longue séquence est 1 * 2 * 3 * 4 * 5 * 6 * 7 * 8 *   qui débute à la position 4  et elle est de longueur 7
 
-
  * @author djine
  *
  */
@@ -24,7 +23,7 @@ public class Exercice_22 {
 		
 		sc = new Scanner(System.in);
 		int N;
-		System.out.println("------------------- Sequence croissante --------------------------\n");
+System.out.println("------------------- Sequence croissante --------------------------\n");
 		
 		do {
 			System.out.println("Donner le nombre de cellule du tableau");

@@ -1,0 +1,61 @@
+
+
+===================================================================================================================
+====-----------------------------------------------------------------------------------------------------------====
+===================================================================================================================
+
+
+
+
+
+
+Exercice 20 : 
+
+	Ecrire un algorithme qui demande successivement 10 nombres à l'utilisateur, 
+	et qui affiche à la fin le plus grand de ces 10 nombres Et affiche aussi son rang dans la liste saisie
+
+Algo : max_liste
+
+const LIMIT 10 ;
+
+Var  val , max, rang: entier;
+
+DEBUT : 
+	
+	POUR i <-- 1 a LIMIT faire 
+   		
+   		ECRIRE ("Saisir le nombre ",i) ;
+		LIRE (val) ;
+
+   		SI( i = 1)ALORS
+   			max <-- val;
+   			rang <-- i;	
+
+   			SINON
+   				SI ( val > max ) ALORS 
+					max <-- val;
+					rang <-- i;
+		   		FINSI
+   		FINSI
+
+   	FINPOUR
+	
+    ECRIRE ("le nombre le plus grand est  :",max );
+    ECRIRE ("son rang dans la liste saisie est :",rang);
+FIN
+
+
+
+
+
+
+
+===================================================================================================================
+====-----------------------------------------------------------------------------------------------------------====
+===================================================================================================================
+
+
+
+
+
+

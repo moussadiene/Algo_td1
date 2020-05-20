@@ -10,8 +10,7 @@
 print("----------------------- SOMME ET MOYENNE -----------------\n")
 
 nbr = 0
-
-while nbr <= 0 :
+while (nbr <= 0 ):
     nbr = int(input("Saisir un entier naturel ::"))
 
 i = 1

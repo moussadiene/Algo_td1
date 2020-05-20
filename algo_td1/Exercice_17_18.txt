@@ -1,0 +1,89 @@
+
+===================================================================================================================
+====-----------------------------------------------------------------------------------------------------------====
+===================================================================================================================
+
+
+
+
+
+
+
+Exercice 17: 
+ Faire un programme qui calcule le PGCD de deux nombres saisis au clavier en utilisant l'astuce suivante:
+ soustrait le plus petit des deux entiers du plus grand jusqu'à ce qu'ils soient égaux. 
+
+ 
+
+Algo : pgcd
+
+Var  val1 , val2  : entier;
+ 
+
+DEBUT : 
+    
+    REPETER
+        ECRIRE ("Saisir les deux nombres ") ;
+        LIRE (val1, val2) ;		
+	JUSQU'A (val1 > 0 ET val2 > 0);
+
+    TANTQUE(val1 != val2)
+
+    	SI(val1 < val2 ) ALORS
+    		val2 <-- val2 - val1 ;
+    		SINO
+				val2 <-- val2 - val1 ;
+		FINSI    		
+	FINTANTQUE
+
+	ECRIRE ("le PGCD est :",val2);
+
+FIN
+===================================================================================================================
+====-----------------------------------------------------------------------------------------------------------====
+===================================================================================================================
+
+
+
+
+Exercice 18: Faire un programme qui calcule et affiche le PPCM de deux entiers saisis au clavier.
+
+
+ Algo : ppcm
+
+Var  val1 , val2 ,nbre1,nbre2: entier;
+
+
+DEBUT : 
+    
+     REPETER
+        ECRIRE ("Saisir les deux nombres ") ;
+        LIRE (val1, val2) ;		
+	JUSQU'A (val1 > 0 ET val2 > 0);
+	
+	nbre1 <-- val1;
+	nbre2 <-- val2;
+
+    TANTQUE(val1 != val2)
+    	
+    	SI(val1 < val2 ) ALORS
+    		val2 <-- val2 - val1 ;
+    		SINON
+				val2 <-- val2 - val1 ;
+		FINSI    		
+	FINTANTQUE
+
+	ECRIRE ("le PGCD est :",val1);
+
+    ECRIRE ("le PPCM est ", (nbre1  * nbre1) div val1 );
+
+FIN
+
+
+
+===================================================================================================================
+====-----------------------------------------------------------------------------------------------------------====
+===================================================================================================================
+
+
+

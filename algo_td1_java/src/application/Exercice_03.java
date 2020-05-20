@@ -49,7 +49,7 @@ public class Exercice_03 {
 		System.out.println("le registance en paralelle est  :" + r_para);
 		
 		
-		System.out.println("--------------------------Version 2-----------------------------------------");
+		System.out.println("--------------------------Version 2-----------------------------------------\n");
 		int choix;
 		do {
 			System.out.println("1 - frequence en serie :");

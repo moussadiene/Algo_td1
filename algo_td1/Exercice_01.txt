@@ -1,0 +1,42 @@
+
+===================================================================================================================
+====-----------------------------------------------------------------------------------------------------------====
+===================================================================================================================
+
+
+
+
+exercice 1 : 
+
+Ecrire un programme qui saisit deux entiers a et b, calcule et affiche le 
+quotient entier, le reste de la division et le ratio (quotient réel).
+Algo : division 
+
+Var nb1, nb2, rest,qentier : entier ;
+	qreel : réel ;
+DEBUT : 
+ 	
+	REPETER
+		Ecrire("Saisir le premier nombre entier naturel :") ;
+ 		Lire(nb1) ;
+	JUSQU’A (nb1>0) ;
+
+	REPETER
+		Ecrire("Saisir les 2ieme nombre entier naturel :") ;
+ 		Lire( nb2) ;
+	JUSQU’A (nb2>0) ;
+	
+	qenier ⇐ nb1 div nb2 ;
+
+	qreel ⇐ nb1/ nb2 ;
+
+	rest ⇐ nb1 mod nb2 ;
+
+		Ecrire("le quotient  entier est  :",qentier ;
+
+		Ecrire("le quotient  entier est  :",qreel) ;
+
+			
+		Ecrire("le reste de la division entier est :",rest) ;
+
+FIN

@@ -1,0 +1,42 @@
+
+===================================================================================================================
+====-----------------------------------------------------------------------------------------------------------====
+===================================================================================================================
+
+Exercice 7 :  	Décomposition d’un montant en euros Écrire un algorithme permettant de décomposer un montant 
+				entré au clavier en billets de 20, 10, 5 euros et pièces de 2, 1 euros, de façon à 
+				minimiser le nombre de billets et de pièces.
+
+Algo : decomposition
+VAR montant, nb20,nb10,nb5,nb2,nb1 : entier ;
+
+DEBUT : 
+	REPETER 
+		ECRIRE ("saisir un montant en euro") ;
+		LIRE (montant) ;	
+	JUSQU’A ( montant>0) ;
+
+	nb20 ←  montant div 20 ;
+	montant ←  montant mod 20 ;
+
+	nb10 ← montant div 10 ;
+	montant ←  montant mod 10 ;
+
+	nb5 ← montant div 5 ;
+	montant ←  montant mod 5 ;
+	
+	nb2 ← montant div 2 ;
+	nb1 ←  montant mod 2 ;
+
+
+	ECRIRE("Apres décomposition euro on a ")
+	ECRIRE(nb20, "de billets de 20 ") ;
+	ECRIRE(nb10, "de billets de 10 ") ;
+	ECRIRE(nb5, "de billets de 5 ") ;
+	ECRIRE(nb2, "de piece de 2 ") ;
+	ECRIRE(nb1, "de piece de 1 ") ;
+FIN
+	
+===================================================================================================================
+====-----------------------------------------------------------------------------------------------------------====
+===================================================================================================================

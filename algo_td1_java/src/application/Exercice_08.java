@@ -31,14 +31,14 @@ public class Exercice_08 {
 		System.out.println("saisir c ");
 		double c = sc.nextFloat();
 		
-		double delta = Math.pow(b, 2) - 4 * a * c;
+		double delta = Math.pow(b, 2) - (4 * a * c);
 		
 		double x1 , x2;
 		if (delta > 0 ) {
 
-			x1 = (- b - Math.sqrt(delta)) / 2 * a;
+			x1 = (- b - Math.sqrt(delta)) / (2 * a);
 	
-			x2 = (- b + Math.sqrt(delta)) / 2 * a;
+			x2 = (- b + Math.sqrt(delta)) / (2 * a);
 	
 			System.out.println(" l ‘ equation admet 2 solutions  : x1 = " +  x1 +" x2 = "+ x2 );
 		}else {

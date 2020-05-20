@@ -1,0 +1,32 @@
+
+===================================================================================================================
+====-----------------------------------------------------------------------------------------------------------====
+===================================================================================================================
+
+
+
+exercice 2 : 
+		Ecrire un programme qui demande à l’utilisateur de donner le rayon d’un cercle et lui retourne sa surface et son périmètre. PI =  4 * arc tangeante de 1. la fonction arc tangeante est atan ex : atan(2).
+
+Algo : cercle 
+
+Var r , surf , peri , pi : reel ;
+
+DEBUT : 
+ 	
+	REPETER
+		Ecrire("Saisir le rayon du cercle svp  :") ;
+ 		Lire(r) ;
+	JUSQU’A (r>0) ;
+
+	pi ⇐  4 * atan(1) ;
+	
+	surf ⇐ pow(r , 2) * pi ;
+	
+	peri ⇐ 2 * pi * r ;
+	
+	Afficher("la surface est  :" , surf) ;
+
+	Afficher("le perimetre est  :" , peri) ;
+FIN
+

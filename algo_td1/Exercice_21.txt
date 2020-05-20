@@ -1,0 +1,71 @@
+
+===================================================================================================================
+====-----------------------------------------------------------------------------------------------------------====
+===================================================================================================================
+
+
+
+
+
+
+
+Exercice 21 : 
+	Ecrire un algorithme mettant en œuvre le jeu suivant entre deux joueurs : Le premier utilisateur 
+	saisi un entier que le second doit deviner. Pour cela, il a le droit à autant de tentatives qu'il souhaite. 
+	A chaque échec, le programme lui indique si l'entier est plus grand ou plus petit que sa proposition. 
+	Un score est affiché lorsque l'entier est trouvé.
+
+
+
+
+
+Algo : jeu_devinette
+
+
+Var  val , cpt,  test : entier;
+					
+DEBUT : 
+	
+	cpt <-- 0;
+	
+		ECRIRE ("Utilisateur 1 : Saisir le entier a deviner ") ;
+		LIRE (val) ;	
+		
+		REPETER 
+
+			ECRIRE ("Utilsateur 2 : Saisir l' entier que de l'utilisateur 1 ");
+			Lire(test);
+			 
+			 cpt ++;
+			SI (test < val )ALORS
+
+				ECRIRE("l'entier plus grand  ");
+
+				SINON
+
+					SI (test > val )ALORS
+
+						ECRIRE ("l'entier plus petit  ") ;
+
+						SINON 
+
+							ECRIRE("Vous avez trouvez le valeur mistere apres "+cpt+" tentatives !!")
+
+					FINSI
+			FINSI
+
+	   	JUSQU'A (test = val );
+
+
+FIN
+
+
+
+
+
+===================================================================================================================
+====-----------------------------------------------------------------------------------------------------------====
+===================================================================================================================
+
+
+

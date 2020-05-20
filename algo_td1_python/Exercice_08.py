@@ -16,7 +16,7 @@ print("saisir a de x2")
 a = float(input("> "))
             
 while(a == 0) : 
-    System.out.println("a doit etre different de 0")
+    print("a doit etre different de 0")
     a = float(input("> "))
 
 print("saisir b de x")

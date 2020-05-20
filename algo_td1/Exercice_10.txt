@@ -1,0 +1,77 @@
+
+
+===================================================================================================================
+====-----------------------------------------------------------------------------------------------------------====
+===================================================================================================================
+
+
+
+
+
+
+
+Exercice 10 : Ecrire un algorithme qui lit trois valeurs entières ( A, B et C) et qui permet de les trier par 
+				échanges successifs Et enfin les afficher dans l'ordre . 
+
+
+
+Algo : trie_par_echange_successif
+		VAR a , b , c , svg : entier ;
+		DEBUT : 
+			
+			ECRIRE ("saisir 3 nombres entiers") ;
+			LIRE (a,b,c) ;		
+			 // les possibilites que a soit plus grand
+
+		SI(a < b ET b < c) ALORS
+			svg  ←  0;
+		FINSI
+
+		SI(a < c ET c < b) ALORS
+			svg  ←   b;
+			b  ←   c;
+			c  ←   svg;
+		FINSI
+		// les possibilités que b soit plus grand
+		SI(b < a ET a < c) ALORS
+			svg  ←  b;
+			b  ←  a;
+			a  ←  svg;
+		FINSI
+		SI(b < c ET c < a) ALORS
+			svg  ←  a;
+			a  ←  b;
+			b  ←  c;
+			c  ←  svg;
+		FINSI
+		
+		// possibilités de  que c soit plus grand
+		SI(c < a ET a < b) ALORS
+			svg  ←  b;
+			b  ←  a;
+			a  ←  c;
+			c  ←  svg;
+		FINSI
+		SI(c < b ET b < a)ALORS
+			svg  ←  a;
+			a  ←  c;
+			c  ←  svg;	
+		FINSI
+			
+				ECRIRE ("affichage dans l'ordre croissant:") ;
+				ECRIRE (a, " ",b," ",c) ;			
+	FIN
+
+
+
+
+
+
+
+===================================================================================================================
+====-----------------------------------------------------------------------------------------------------------====
+===================================================================================================================
+
+
+
+

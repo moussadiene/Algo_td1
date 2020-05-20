@@ -1,0 +1,45 @@
+
+===================================================================================================================
+====-----------------------------------------------------------------------------------------------------------====
+===================================================================================================================
+
+
+
+
+Exercice 12 : Un nombre est parfait s’il est égal à la somme de ses diviseurs stricts (différents de lui-même). 
+				Ainsi par exemple, l’entier 6 est parfait car 6 = 1 + 2 + 3. 
+				Écrire un algorithme permettant de déterminer si un entier naturel est un nombre parfait.
+
+Algo : parfait 
+
+Var nbr , som , i : entier;
+	
+	
+
+DEBUT : 
+ 	som <-- 0 ;
+	REPETER
+		ECRIRE ("Saisir un nombre entier naturel") ;
+		LIRE (nbr) ;		
+	JUSQU'A( nbr ) ;
+	 
+	POUR i allant de 1 a nbr div 2 FAIRE
+		SI (nb % i == 0)ALORS
+			som ← som + i;
+		FINSI
+	FINPOUR
+	
+	SI (som = nbr ) ALORS
+		ECRIRE (nbr," est parfait");
+		SINON
+			ECRIRE (nbr," n'est pas parfait : ");
+	FINSI
+FIN
+
+
+
+===================================================================================================================
+====-----------------------------------------------------------------------------------------------------------====
+===================================================================================================================
+
+

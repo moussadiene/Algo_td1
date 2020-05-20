@@ -1,0 +1,53 @@
+
+===================================================================================================================
+====-----------------------------------------------------------------------------------------------------------====
+===================================================================================================================
+
+
+
+
+
+exercice 4 : 
+Ecrire un programme qui saisit un réel x et un entier n et affiche x à la puissance n.
+Version 1 : utiliser la fonction pow  du fichier d’en-tête <math.h>  ex : pow(x,n)
+Version 2 : en utilisant un boucle
+
+Algo : puissance 
+
+Var x, p1, p2 : réel ;
+      n , i : entier ;
+
+DEBUT : 
+ 	
+	REPETER
+		Ecrire("Saisir un nombre reel svp  :") ;
+ 		Lire(x) ;
+	JUSQU’A (x>0) ;
+	
+	REPETER
+		Ecrire("Saisir l’exposant de ce nombre en entier svp  :") ;
+ 		Lire(n) ;
+	JUSQU’A (n>0) ;
+
+	// version1
+	p1 ⇐  pow(x,n);
+	
+	// version2
+	p2 = 1 ;
+	POUR i allant de 1 à n FAIRE
+		p2 ⇐ p2 * x ;
+	FINPOUR
+	
+	Ecrire("la puissance avec math.h est  :" , p1) ;
+	Ecrire("le puissance avec boucle est  :" , p2) ;
+FIN
+
+
+
+
+
+
+
+
+
+

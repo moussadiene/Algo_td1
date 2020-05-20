@@ -47,4 +47,4 @@ if(c < b and b < a):
     c = svg	
 
 print("affichage dans l'ordre croissant:")
-print(a,"\t", b , "\t",c);	
+print(a,"\t ", b , "\t",c);	
