@@ -5,5 +5,4 @@ Developpement web et mobile
 #---------------------------
 Implémentation en Java et Python
 #-------------------------
-@DIENE
-#----
+
