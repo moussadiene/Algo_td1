@@ -9,12 +9,9 @@ exercice 1 :
 nbr1 = input("Entrer le premier entier : ")
 nbr1 = int(nbr1)
 
-nbr2 = input("Entrer le deuxieme entier : ")
-nbr2 = int(nbr2)
-
+nbr2 = 0
 while(nbr2 == 0):
-    print("le deuxieme entier ne doit pas etre 0")
-    nbr2 = input("Saisir encore : ")
+    nbr2 = input("Entrer le deuxieme entier : ")
     nbr2 = int(nbr2)
 
 qentier = nbr1 / nbr2

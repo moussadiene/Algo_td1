@@ -23,10 +23,10 @@ public class Exercice_22 {
 		
 		sc = new Scanner(System.in);
 		int N;
-System.out.println("------------------- Sequence croissante --------------------------\n");
+		System.out.println("------------------- Sequence croissante --------------------------\n");
 		
 		do {
-			System.out.println("Donner le nombre de cellule du tableau");
+			System.out.print("Donner le nombre de cellule du tableau ::");
 			N = sc.nextInt();
 					
 		}while(N <= 0);
@@ -38,7 +38,7 @@ System.out.println("------------------- Sequence croissante --------------------
 				System.out.print("Cellule "+i+" ::");
 				tab[i] = sc.nextInt();
 				
-			}while(tab[i] <=0 && tab[i] >100);
+			}while(tab[i] <1 && tab[i] >100);
 		}
 		
 		int posD = 0;
@@ -48,13 +48,12 @@ System.out.println("------------------- Sequence croissante --------------------
 	   	for (int i = 0; i < tab.length-1; i++) {
 	   		if(tab[i] < tab[i+1]) {
 	   			taille ++;
-	   		}else {
 	   			if(maxlong < taille ) {
 	   				maxlong = taille ;
-					posD = i - taille + 1 ;
+					posD = i - taille + 2 ;
 	   			}
-			
-			taille = 1;		
+	   		}else {
+	   			taille = 1;		
 	   		}
 	   		
 		}
@@ -64,7 +63,7 @@ System.out.println("------------------- Sequence croissante --------------------
 	   		
 			System.out.print(tab[i] + " * ");
 		}
-	   	System.out.print("\t qui débute à la position "+ posD +"  et elle est de longueur "+ maxlong);
+	   	System.out.print("\n qui débute à la position "+ posD +"  \n et elle est de longueur "+ maxlong);
 	}
 
 }

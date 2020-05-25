@@ -50,12 +50,12 @@ DEBUT :
 
 		SI(tab[i] < tab[i+1]) ALORS          
 	   		long ++ ;							
-			SINON
-				SI(maxlong < long )ALORS    	
-					maxlong <--long ;
-					posD ← i - long + 1 ;			
-				FINSI
-				long <-- 1;						
+			SI(maxlong < long )ALORS    	
+				maxlong <-- long ;
+				posD <-- i - long + 1 ;			
+			FINSI
+		SINON
+			long <-- 1;						
 	   	FINSI
 	FINPOUR
 

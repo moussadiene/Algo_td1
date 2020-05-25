@@ -10,8 +10,7 @@ print("------------------------------- Somme de 5 entiers -------------------")
 i = 1
 som = 0
 while (i <= 5) : 
-
-    val = input(" Saisir un entier  ",i,"::")
+    val = input(" Saisir un entier  "+ str(i) +"::")
     val = int(val)
     som = som + val
     i += 1

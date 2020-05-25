@@ -69,7 +69,6 @@ public class Exercice_13_14 {
 		if (jj > 31 || jj < 1 || mm > 12 || mm <1 || an < 1000 || an > 2020) {
 			System.out.println(jj + "/" + mm + "/" + an + " est invalid");
 		}else {
-
 			
 			if(mm <= 7) {
 				
@@ -77,7 +76,7 @@ public class Exercice_13_14 {
 					System.out.println("invalide, ce mois ne compte pas 31 jours");
 				}else {
 					
-					if(mm == 2 && jj == 29 && an % 4 != 0 && an % 100 == 0){
+					if(mm == 2 && jj == 29 && an % 4 != 0 || an % 100 == 0 || an % 400==0){
 						System.out.println("invalide, le mois de fevrier de cette annee compte 28 jours");
 					}else {
 						System.out.println(jj + "/" + mm + "/" + an + " est valide");
@@ -98,7 +97,7 @@ public class Exercice_13_14 {
 	}
 
 	public static void bissextille(int an) {
-		if (an % 4 == 0 && an % 100 != 0) {
+		if (an % 4 == 0 && an % 100 != 0 && an % 400!=0) {
 			System.out.println("l'annee :" + an +" est bissextile");
 		}else {
 			System.out.println("l'annee :" + an +" n'est pas bissextile");
